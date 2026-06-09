@@ -254,10 +254,36 @@
         linear-gradient(180deg, rgba(251, 247, 239, .98), rgba(243, 234, 216, .92));
     }
 
-    .front strong {
+    .card-logo {
+      display: grid;
+      place-items: center;
+      gap: 6px;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .card-logo svg {
+      display: block;
+      width: min(76px, 52%);
+      height: auto;
+      filter: drop-shadow(0 10px 18px rgba(26, 22, 18, .14));
+    }
+
+    .card-logo strong {
+      display: block;
       font-family: var(--serif);
-      font-size: clamp(1.4rem, 2vw, 2.1rem);
-      color: var(--gold);
+      font-size: clamp(.95rem, 1.35vw, 1.34rem);
+      line-height: .92;
+      color: var(--ink);
+    }
+
+    .card-logo span {
+      display: block;
+      font-size: clamp(.48rem, .68vw, .64rem);
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red);
     }
 
     .back {
@@ -424,7 +450,24 @@
         card.setAttribute("aria-label", `Hidden card for ${cardData.title}`);
         card.innerHTML = `
           <span class="card-inner">
-            <span class="face front"><strong>Silly</strong></span>
+            <span class="face front">
+              <span class="card-logo">
+                <svg viewBox="0 0 120 104" aria-hidden="true">
+                  <path d="M32 79l22-22" stroke="#5B8FD4" stroke-width="8" stroke-linecap="round"/>
+                  <path d="M88 79L66 57" stroke="#c8462c" stroke-width="8" stroke-linecap="round"/>
+                  <rect x="18" y="67" width="31" height="20" rx="9" transform="rotate(-34 33.5 77)" fill="#5B8FD4"/>
+                  <rect x="71" y="67" width="31" height="20" rx="9" transform="rotate(34 86.5 77)" fill="#c8462c"/>
+                  <circle cx="60" cy="39" r="28" fill="#b8954a" stroke="#1a1612" stroke-width="3"/>
+                  <circle cx="49" cy="33" r="4" fill="#fbf7ef"/>
+                  <circle cx="71" cy="33" r="4" fill="#fbf7ef"/>
+                  <circle cx="60" cy="48" r="4" fill="#fbf7ef"/>
+                  <path d="M47 55c7 7 19 7 26 0" stroke="#1a1612" stroke-width="4" fill="none" stroke-linecap="round"/>
+                  <path d="M42 22l-7-8m43 8l7-8" stroke="#c8462c" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <strong>Silly</strong>
+                <span>Pickleball</span>
+              </span>
+            </span>
             <span class="face back">
               <span class="card-graphic">${cardData.art}</span>
               <span class="card-title">${cardData.title}</span>
