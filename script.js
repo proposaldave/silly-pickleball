@@ -2,7 +2,7 @@ const variants = {
   consumer: {
     kicker: "Brand route 01",
     title: "Silly Pickleball",
-    line: "The game that drops the guard before anyone can posture.",
+    line: "Let your guard down.",
     image: "assets/surface-to-signal.png"
   },
   club: {
