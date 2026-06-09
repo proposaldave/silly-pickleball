@@ -349,7 +349,9 @@ a {
   gap: 12px;
 }
 
-.format-row div {
+.format-row div,
+.format-row .format-link {
+  display: block;
   min-height: 150px;
   padding: 22px;
   background: var(--paper);

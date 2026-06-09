@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silly Pickleball Memory Game</title>
+  <meta name="description" content="Match silly pickleball moments and reveal the social signal underneath.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,650..900,40..100&family=Manrope:wght@500;650;750;850&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf7ef;
+      --cream: #f3ead8;
+      --ink: #1a1612;
+      --blue: #5B8FD4;
+      --gold: #b8954a;
+      --red: #c8462c;
+      --line: rgba(26, 22, 18, .16);
+      --sans: "Manrope", Arial, sans-serif;
+      --serif: "Fraunces", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(91, 143, 212, .20), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(200, 70, 44, .16), transparent 25%),
+        linear-gradient(180deg, var(--paper), var(--cream));
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .game-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(300px, .7fr) minmax(560px, 1fr);
+      gap: clamp(24px, 4vw, 64px);
+      padding: clamp(20px, 4vw, 64px);
+      align-items: center;
+    }
+
+    .copy-panel {
+      display: grid;
+      align-content: center;
+      gap: 22px;
+      min-height: calc(100vh - 128px);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+    }
+
+    .brand-ball {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 30% 36%, var(--paper) 0 2px, transparent 3px),
+        radial-gradient(circle at 63% 38%, var(--paper) 0 2px, transparent 3px),
+        radial-gradient(circle at 48% 68%, var(--paper) 0 2px, transparent 3px),
+        var(--gold);
+      box-shadow: inset 0 0 0 2px rgba(26, 22, 18, .18);
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: .68rem;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-family: var(--serif);
+      font-size: clamp(4rem, 8vw, 8.6rem);
+      line-height: .82;
+      font-weight: 900;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 610px;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.4vw, 2rem);
+      line-height: 1.12;
+      color: rgba(26, 22, 18, .70);
+    }
+
+    .score-card {
+      width: min(100%, 520px);
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(251, 247, 239, .78);
+      box-shadow: 0 22px 70px rgba(26, 22, 18, .12);
+    }
+
+    .score-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(26, 22, 18, .58);
+    }
+
+    .score-count {
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .bar {
+      height: 10px;
+      margin-top: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(184, 149, 74, .18);
+    }
+
+    .fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), var(--gold), var(--red));
+      transition: width .28s ease;
+    }
+
+    .status {
+      min-height: 44px;
+      margin: 14px 0 0;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .button {
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font: 850 .82rem var(--sans);
+      cursor: pointer;
+    }
+
+    .button.primary {
+      background: var(--red);
+      color: var(--paper);
+    }
+
+    .button.secondary {
+      background: rgba(251, 247, 239, .68);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .board-wrap {
+      position: relative;
+      padding: clamp(14px, 2vw, 24px);
+      border: 1px solid rgba(26, 22, 18, .14);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(251, 247, 239, .86), rgba(251, 247, 239, .54)),
+        url("assets/social-rituals.png") center / cover;
+      box-shadow: 0 28px 90px rgba(26, 22, 18, .20);
+      overflow: hidden;
+    }
+
+    .board-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(251, 247, 239, .74);
+      backdrop-filter: blur(4px);
+    }
+
+    .board {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(10px, 1.4vw, 16px);
+      perspective: 1200px;
+    }
+
+    .card {
+      position: relative;
+      aspect-ratio: 1 / .76;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
+      perspective: 1000px;
+    }
+
+    .card:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+
+    .card-inner {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      transition: transform .36s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .card.open .card-inner,
+    .card.matched .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 8px;
+      border: 1.5px solid rgba(184, 149, 74, .42);
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 14px 30px rgba(26, 22, 18, .12), inset 0 0 0 1px rgba(255, 255, 255, .52);
+    }
+
+    .front {
+      background:
+        radial-gradient(circle at 50% 35%, rgba(184, 149, 74, .22), transparent 30%),
+        linear-gradient(180deg, rgba(251, 247, 239, .98), rgba(243, 234, 216, .92));
+    }
+
+    .front strong {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2vw, 2.1rem);
+      color: var(--gold);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      align-content: center;
+      gap: 9px;
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(26, 22, 18, .97), rgba(26, 22, 18, .90));
+      color: var(--paper);
+    }
+
+    .matched .back {
+      background: linear-gradient(180deg, #124a76, #17344f);
+      border-color: rgba(91, 143, 212, .76);
+    }
+
+    .card-title {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 1.55vw, 1.55rem);
+      line-height: .96;
+      font-weight: 850;
+    }
+
+    .card-note {
+      display: block;
+      max-width: 92%;
+      margin: 0 auto;
+      font-size: clamp(.58rem, .82vw, .76rem);
+      line-height: 1.22;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #f4d98b;
+    }
+
+    @media (max-width: 1040px) {
+      .game-shell {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .copy-panel {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .game-shell {
+        padding: 16px;
+      }
+
+      .board {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="game-shell">
+    <section class="copy-panel" aria-labelledby="game-title">
+      <a class="brand-row" href="index.html" aria-label="Silly Pickleball home">
+        <span class="brand-ball" aria-hidden="true"></span>
+        <span>Silly Pickleball</span>
+      </a>
+      <p class="eyebrow">Silliness match</p>
+      <h1 id="game-title">Match the silly. Find the signal.</h1>
+      <p class="lede">Every pair is a pickleball absurdity. Matching it turns the joke into a read on who can relax, recover, and play well with others.</p>
+      <div class="score-card" aria-live="polite">
+        <div class="score-top">
+          <span>Progress</span>
+          <span class="score-count" id="score-count">0 / 6</span>
+        </div>
+        <div class="bar" aria-hidden="true"><div class="fill" id="fill"></div></div>
+        <p class="status" id="status">Pick two cards. A match means the room got a little safer.</p>
+        <div class="actions">
+          <button class="button primary" id="reset" type="button">Shuffle board</button>
+          <a class="button secondary" href="index.html">Back to site</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-wrap" aria-label="Silly Pickleball memory game board">
+      <div class="board" id="board"></div>
+    </section>
+  </main>
+
+  <script>
+    const pairs = [
+      { key: "score", title: "The score", note: "7-11-2 needs a translator" },
+      { key: "dink", title: "Dinking", note: "soft forever, then chaos" },
+      { key: "kitchen", title: "The kitchen", note: "a silly line everyone obeys" },
+      { key: "middle", title: "Who's got middle?", note: "confusion becomes coordination" },
+      { key: "net", title: "Net apology", note: "sorry, but also point" },
+      { key: "miss", title: "Easy miss", note: "the sitter humbles everyone" }
+    ];
+
+    const board = document.querySelector("#board");
+    const scoreCount = document.querySelector("#score-count");
+    const fill = document.querySelector("#fill");
+    const status = document.querySelector("#status");
+    const reset = document.querySelector("#reset");
+    let openCards = [];
+    let matched = 0;
+    let locked = false;
+
+    function shuffle(items) {
+      return items
+        .map((item) => ({ item, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ item }) => item);
+    }
+
+    function makeDeck() {
+      return shuffle(pairs.flatMap((pair) => [
+        { ...pair, id: `${pair.key}-a` },
+        { ...pair, id: `${pair.key}-b` }
+      ]));
+    }
+
+    function renderScore(message) {
+      scoreCount.textContent = `${matched} / ${pairs.length}`;
+      fill.style.width = `${Math.round((matched / pairs.length) * 100)}%`;
+      if (message) status.textContent = message;
+    }
+
+    function renderBoard() {
+      board.innerHTML = "";
+      openCards = [];
+      matched = 0;
+      locked = false;
+      makeDeck().forEach((cardData) => {
+        const card = document.createElement("button");
+        card.className = "card";
+        card.type = "button";
+        card.dataset.key = cardData.key;
+        card.setAttribute("aria-label", `Hidden card for ${cardData.title}`);
+        card.innerHTML = `
+          <span class="card-inner">
+            <span class="face front"><strong>Silly</strong></span>
+            <span class="face back">
+              <span class="card-title">${cardData.title}</span>
+              <span class="card-note">${cardData.note}</span>
+            </span>
+          </span>
+        `;
+        card.addEventListener("click", () => chooseCard(card, cardData));
+        board.appendChild(card);
+      });
+      renderScore("Pick two cards. A match means the room got a little safer.");
+    }
+
+    function chooseCard(card, cardData) {
+      if (locked || card.classList.contains("open") || card.classList.contains("matched")) return;
+      card.classList.add("open");
+      card.setAttribute("aria-label", `${cardData.title}: ${cardData.note}`);
+      openCards.push(card);
+
+      if (openCards.length === 1) {
+        renderScore("Find the matching silly moment.");
+        return;
+      }
+
+      locked = true;
+      const [first, second] = openCards;
+      if (first.dataset.key === second.dataset.key) {
+        first.classList.add("matched");
+        second.classList.add("matched");
+        first.disabled = true;
+        second.disabled = true;
+        matched += 1;
+        openCards = [];
+        locked = false;
+        renderScore(matched === pairs.length ? "Board cleared. The silliness became a connection graph." : "Match made. That joke now has signal.");
+        return;
+      }
+
+      renderScore("Not the same silliness. Reset the moment and try again.");
+      setTimeout(() => {
+        first.classList.remove("open");
+        second.classList.remove("open");
+        first.setAttribute("aria-label", "Hidden card");
+        second.setAttribute("aria-label", "Hidden card");
+        openCards = [];
+        locked = false;
+        renderScore("Pick two cards. A match means the room got a little safer.");
+      }, 780);
+    }
+
+    reset.addEventListener("click", renderBoard);
+    renderBoard();
+  </script>
+</body>
+</html>
