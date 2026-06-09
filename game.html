@@ -263,8 +263,8 @@
     .back {
       transform: rotateY(180deg);
       align-content: center;
-      gap: 9px;
-      padding: 12px;
+      gap: 4px;
+      padding: 8px;
       background: linear-gradient(180deg, rgba(26, 22, 18, .97), rgba(26, 22, 18, .90));
       color: var(--paper);
     }
@@ -274,10 +274,27 @@
       border-color: rgba(91, 143, 212, .76);
     }
 
+    .card-graphic {
+      display: grid;
+      place-items: center;
+      width: min(54px, 34%);
+      aspect-ratio: 1;
+      margin: 0 auto 2px;
+      border-radius: 999px;
+      background: rgba(251, 247, 239, .10);
+      box-shadow: inset 0 0 0 1px rgba(251, 247, 239, .14);
+    }
+
+    .card-graphic svg {
+      display: block;
+      width: 78%;
+      height: 78%;
+    }
+
     .card-title {
       display: block;
       font-family: var(--serif);
-      font-size: clamp(1.05rem, 1.55vw, 1.55rem);
+      font-size: clamp(.82rem, 1.2vw, 1.22rem);
       line-height: .96;
       font-weight: 850;
     }
@@ -286,8 +303,8 @@
       display: block;
       max-width: 92%;
       margin: 0 auto;
-      font-size: clamp(.58rem, .82vw, .76rem);
-      line-height: 1.22;
+      font-size: clamp(.48rem, .66vw, .62rem);
+      line-height: 1.12;
       font-weight: 850;
       letter-spacing: .08em;
       text-transform: uppercase;
@@ -346,13 +363,22 @@
   </main>
 
   <script>
+    const art = {
+      score: `<svg viewBox="0 0 96 96" aria-hidden="true"><rect x="14" y="22" width="68" height="52" rx="7" fill="#fbf7ef"/><rect x="20" y="28" width="56" height="40" rx="4" fill="#1a1612"/><path d="M30 42h10m8 0h18M30 56h10m8 0h18" stroke="#f4d98b" stroke-width="5" stroke-linecap="round"/><circle cx="30" cy="42" r="3" fill="#c8462c"/><circle cx="30" cy="56" r="3" fill="#5B8FD4"/></svg>`,
+      dink: `<svg viewBox="0 0 96 96" aria-hidden="true"><path d="M26 65l18-18" stroke="#fbf7ef" stroke-width="6" stroke-linecap="round"/><path d="M70 65L52 47" stroke="#fbf7ef" stroke-width="6" stroke-linecap="round"/><rect x="18" y="54" width="26" height="18" rx="8" transform="rotate(-32 31 63)" fill="#5B8FD4"/><rect x="52" y="54" width="26" height="18" rx="8" transform="rotate(32 65 63)" fill="#c8462c"/><circle cx="48" cy="33" r="10" fill="#b8954a"/><path d="M30 36c9-8 27-8 36 0" stroke="#f4d98b" stroke-width="4" fill="none" stroke-linecap="round"/></svg>`,
+      kitchen: `<svg viewBox="0 0 96 96" aria-hidden="true"><rect x="16" y="18" width="64" height="60" rx="5" fill="#5B8FD4"/><path d="M16 48h64M48 18v60M16 34h64" stroke="#fbf7ef" stroke-width="4"/><rect x="18" y="20" width="60" height="14" fill="#c8462c" opacity=".82"/><path d="M30 27h36" stroke="#f4d98b" stroke-width="4" stroke-linecap="round"/><circle cx="64" cy="61" r="6" fill="#b8954a"/></svg>`,
+      middle: `<svg viewBox="0 0 96 96" aria-hidden="true"><path d="M48 18v60" stroke="#fbf7ef" stroke-width="5" stroke-dasharray="6 7" stroke-linecap="round"/><path d="M16 48h24m-8-8l8 8-8 8M80 48H56m8-8l-8 8 8 8" stroke="#5B8FD4" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="26" r="10" fill="#c8462c"/><circle cx="68" cy="70" r="10" fill="#b8954a"/><text x="48" y="56" text-anchor="middle" font-family="Arial" font-size="30" font-weight="900" fill="#fbf7ef">?</text></svg>`,
+      net: `<svg viewBox="0 0 96 96" aria-hidden="true"><path d="M14 51h68" stroke="#fbf7ef" stroke-width="5" stroke-linecap="round"/><path d="M20 34v34M32 34v34M44 34v34M56 34v34M68 34v34M80 34v34" stroke="#fbf7ef" stroke-width="2" opacity=".75"/><path d="M14 34h68v34H14z" fill="none" stroke="#fbf7ef" stroke-width="3"/><path d="M22 27c14 13 32 13 48 0" stroke="#f4d98b" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="70" cy="28" r="8" fill="#c8462c"/></svg>`,
+      miss: `<svg viewBox="0 0 96 96" aria-hidden="true"><path d="M26 70l22-22" stroke="#fbf7ef" stroke-width="7" stroke-linecap="round"/><rect x="18" y="61" width="31" height="20" rx="9" transform="rotate(-35 33.5 71)" fill="#5B8FD4"/><circle cx="63" cy="28" r="10" fill="#b8954a"/><path d="M56 42c12 7 19 14 22 25" stroke="#c8462c" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="2 8"/><path d="M64 54l14 14m0-14L64 68" stroke="#f4d98b" stroke-width="6" stroke-linecap="round"/></svg>`
+    };
+
     const pairs = [
-      { key: "score", title: "The score", note: "7-11-2 needs a translator" },
-      { key: "dink", title: "Dinking", note: "soft forever, then chaos" },
-      { key: "kitchen", title: "The kitchen", note: "a silly line everyone obeys" },
-      { key: "middle", title: "Who's got middle?", note: "confusion becomes coordination" },
-      { key: "net", title: "Net apology", note: "sorry, but also point" },
-      { key: "miss", title: "Easy miss", note: "the sitter humbles everyone" }
+      { key: "score", title: "The score", note: "7-11-2 needs a translator", art: art.score },
+      { key: "dink", title: "Dinking", note: "soft forever, then chaos", art: art.dink },
+      { key: "kitchen", title: "The kitchen", note: "a silly line everyone obeys", art: art.kitchen },
+      { key: "middle", title: "Who's got middle?", note: "confusion becomes signal", art: art.middle },
+      { key: "net", title: "Net apology", note: "sorry, but also point", art: art.net },
+      { key: "miss", title: "Easy miss", note: "the sitter humbles everyone", art: art.miss }
     ];
 
     const board = document.querySelector("#board");
@@ -360,6 +386,7 @@
     const fill = document.querySelector("#fill");
     const status = document.querySelector("#status");
     const reset = document.querySelector("#reset");
+    const previewGraphics = new URLSearchParams(window.location.search).get("preview") === "graphics";
     let openCards = [];
     let matched = 0;
     let locked = false;
@@ -399,11 +426,15 @@
           <span class="card-inner">
             <span class="face front"><strong>Silly</strong></span>
             <span class="face back">
+              <span class="card-graphic">${cardData.art}</span>
               <span class="card-title">${cardData.title}</span>
               <span class="card-note">${cardData.note}</span>
             </span>
           </span>
         `;
+        if (previewGraphics) {
+          card.classList.add("open");
+        }
         card.addEventListener("click", () => chooseCard(card, cardData));
         board.appendChild(card);
       });
