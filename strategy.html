@@ -807,6 +807,99 @@
       line-height: 1.45;
     }
 
+    .academy-system {
+      display: grid;
+      grid-template-columns: minmax(280px, .86fr) minmax(360px, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
+    }
+
+    .academy-claim {
+      padding: clamp(24px, 3vw, 36px);
+      border: 1px solid rgba(200, 161, 90, .34);
+      border-left: 8px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      background: rgba(247, 245, 241, .88);
+      box-shadow: var(--shadow);
+    }
+
+    .academy-claim b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 2.8vw, 3rem);
+      line-height: .96;
+    }
+
+    .academy-claim p {
+      margin: 18px 0 0;
+      color: rgba(29, 36, 51, .68);
+      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      font-weight: 750;
+      line-height: 1.48;
+    }
+
+    .source-link {
+      display: inline-flex;
+      margin-top: 22px;
+      padding: 12px 16px;
+      border: 1px solid rgba(29, 36, 51, .18);
+      border-radius: 999px;
+      background: rgba(237, 231, 222, .78);
+      color: var(--ink);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .dimension-grid,
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .dimension-grid article,
+    .video-grid article {
+      min-height: 168px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(237, 231, 222, .76);
+    }
+
+    .dimension-grid span,
+    .video-grid span {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .dimension-grid b,
+    .video-grid b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.34rem, 2vw, 2rem);
+      line-height: .95;
+    }
+
+    .dimension-grid p,
+    .video-grid p {
+      margin: 10px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-weight: 750;
+      line-height: 1.42;
+    }
+
+    .video-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .job-strip {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -989,6 +1082,9 @@
       .density-flow,
       .pulse-board,
       .staff-board,
+      .academy-system,
+      .dimension-grid,
+      .video-grid,
       .operator-list,
       .job-strip,
       .learning-board,
@@ -1026,6 +1122,7 @@
       <a href="#market">Market</a>
       <a href="#staff-goals">Staff goals</a>
       <a href="#experience">Experience</a>
+      <a href="#academy">Academy</a>
       <a href="#operations">Operations</a>
       <a href="#product">Product</a>
       <a href="#measurement">Measurement</a>
@@ -1265,6 +1362,60 @@
           <img src="assets/pickleball-is-silly-moments-map.png" alt="Pickleball is silly visual map">
           <figcaption>Moment map</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="slide" id="academy">
+      <div class="academy-system">
+        <div>
+          <p class="eyebrow">Silly Pickleball Academy</p>
+          <h2>Improvement means becoming more fun and valuable to play with.</h2>
+          <p class="lede">The Academy should not teach players to become one-dimensional bangers who only chase the point. It should teach them to maximize Give n Receive: more connection, more value to partners, more range, more joy, and more ways to keep a group wanting to play together.</p>
+          <a class="source-link" href="https://4dpickleball.com/" target="_blank" rel="noreferrer">Reference: 4dpickleball.com</a>
+        </div>
+        <div class="academy-claim">
+          <b>4D Pickleball is the serious skill engine underneath the silly brand.</b>
+          <p>Players become more fun to play with when they can hit soft and hard, defend and attack, reset and speed up, invite rallies and finish points. The teaching goal is range, not ego.</p>
+        </div>
+      </div>
+      <div class="dimension-grid" aria-label="4D Pickleball learning dimensions">
+        <article>
+          <span>Drive</span>
+          <b>Hard when it helps the group.</b>
+          <p>Teach pace without turning every rally into a banger contest.</p>
+        </article>
+        <article>
+          <span>Defend</span>
+          <b>Give partners a calm ball.</b>
+          <p>Blocks, resets, baby blocks, and soft hands make play feel safer.</p>
+        </article>
+        <article>
+          <span>Drop</span>
+          <b>Move from chaos to kitchen.</b>
+          <p>Players learn the transition skills that keep points alive and partners included.</p>
+        </article>
+        <article>
+          <span>Dink</span>
+          <b>Create patience, touch, and social rhythm.</b>
+          <p>Dinking becomes a connection skill: slow enough to talk, skilled enough to improve.</p>
+        </article>
+      </div>
+      <div class="video-grid" aria-label="Silly Pickleball Academy video modules">
+        <article>
+          <span>Video module</span>
+          <b>Kitchen lob</b>
+          <p>Pros show the playful high pop that lands in the kitchen and gives intermediates a finishable ball.</p>
+        </article>
+        <article>
+          <span>Video module</span>
+          <b>Erne</b>
+          <p>Teach the flashy sideline move as a fun curiosity, not a status test.</p>
+        </article>
+        <article>
+          <span>Video module</span>
+          <b>ATP</b>
+          <p>Use around-the-post examples to make advanced creativity feel learnable and joyful.</p>
+        </article>
       </div>
     </section>
 
