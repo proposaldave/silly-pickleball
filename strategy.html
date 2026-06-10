@@ -692,6 +692,93 @@
       line-height: .9;
     }
 
+    .staff-board {
+      display: grid;
+      grid-template-columns: minmax(280px, .7fr) minmax(360px, 1fr);
+      gap: clamp(28px, 5vw, 70px);
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    .staff-principle {
+      padding: clamp(24px, 3vw, 36px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(200, 161, 90, .14), transparent 64%),
+        rgba(247, 245, 241, .86);
+      box-shadow: var(--shadow);
+    }
+
+    .staff-principle h3 {
+      font-size: clamp(2.4rem, 5vw, 5.8rem);
+    }
+
+    .staff-principle p {
+      margin: 22px 0 0;
+      color: rgba(29, 36, 51, .68);
+      font-size: clamp(1rem, 1.45vw, 1.2rem);
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .staff-objectives {
+      display: grid;
+      gap: 12px;
+    }
+
+    .staff-objectives article {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: start;
+      min-height: 104px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .82);
+      box-shadow: 0 14px 34px rgba(29, 36, 51, .07);
+    }
+
+    .staff-objectives span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--paper);
+      font-weight: 900;
+    }
+
+    .staff-objectives b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.45rem, 2.2vw, 2.4rem);
+      line-height: .96;
+    }
+
+    .staff-objectives p {
+      margin: 8px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-weight: 750;
+      line-height: 1.4;
+    }
+
+    .reward-strip {
+      margin-top: 18px;
+      padding: 18px 22px;
+      border: 1px solid rgba(91, 143, 212, .28);
+      border-left: 6px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      background: rgba(237, 231, 222, .82);
+      color: var(--ink);
+      font-size: clamp(1rem, 1.55vw, 1.24rem);
+      line-height: 1.28;
+      font-weight: 900;
+    }
+
     .operator-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -901,6 +988,7 @@
       .formula,
       .density-flow,
       .pulse-board,
+      .staff-board,
       .operator-list,
       .job-strip,
       .learning-board,
@@ -936,6 +1024,7 @@
     <nav class="strategy-nav" aria-label="Strategy sections">
       <a href="#thesis">Thesis</a>
       <a href="#market">Market</a>
+      <a href="#staff-goals">Staff goals</a>
       <a href="#experience">Experience</a>
       <a href="#operations">Operations</a>
       <a href="#product">Product</a>
@@ -1071,6 +1160,55 @@
           <article>
             <span>03</span>
             <b>Lower-level socials are built from warm demand, not cold programming guesses.</b>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="staff-goals">
+      <p class="eyebrow">Staff goals and objectives</p>
+      <h2>Silly Pickleball gives staff a clear job: create, measure, and reward human connection.</h2>
+      <div class="staff-board">
+        <article class="staff-principle">
+          <h3>All members should live a little more Give n Receive.</h3>
+          <p>Every event should have three visible components: silliness, community, and open-hearted connection. If an event does not create those, it is just court usage.</p>
+          <div class="reward-strip">Reward referrers. Reward givers. Reward community builders.</div>
+        </article>
+        <div class="staff-objectives">
+          <article>
+            <span>01</span>
+            <div>
+              <b>Build every format with a connection plan.</b>
+              <p>Round matchups, clinic outline, welcome moment, and who should meet whom.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <b>Create event options for each regular situation.</b>
+              <p>Lower-level socials, onboarding clinics, silly open-level events, upper-level silly events, and community clinics.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <b>Event leaders own the vibe.</b>
+              <p>Pros and hosts must create and protect the room energy, not just teach the drill.</p>
+            </div>
+          </article>
+          <article>
+            <span>04</span>
+            <div>
+              <b>Measure human connection after events.</b>
+              <p>Front desk, staff, or GnR should capture post-event feedback: who felt welcome, who connected, who should be invited next.</p>
+            </div>
+          </article>
+          <article>
+            <span>05</span>
+            <div>
+              <b>Turn referrals into community events.</b>
+              <p>Member referrals should flow into the right social, clinic, or onboarding event instead of getting lost.</p>
+            </div>
           </article>
         </div>
       </div>
