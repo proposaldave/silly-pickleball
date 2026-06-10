@@ -541,6 +541,7 @@ a {
 .strike-art span,
 .block-art span,
 .tic-art span,
+.reset-art span,
 .lob-art span,
 .sitter-art span,
 .weird-art span,
@@ -578,6 +579,34 @@ a {
   border-radius: 10px;
   background: var(--ink);
   transform: rotate(-8deg);
+}
+
+.reset-art span {
+  left: 32px;
+  top: 18px;
+}
+
+.reset-art i {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  width: 44px;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--ink);
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.reset-art em {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  top: 28px;
+  height: 58px;
+  border-right: 4px dashed var(--red);
+  border-bottom: 4px dashed var(--gold);
+  border-radius: 0 0 70% 0;
+  transform: rotate(10deg);
 }
 
 .tic-art {
