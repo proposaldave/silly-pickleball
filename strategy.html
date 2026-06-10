@@ -900,6 +900,84 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .curriculum-board {
+      display: grid;
+      grid-template-columns: minmax(300px, .78fr) minmax(420px, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
+      margin-top: 38px;
+    }
+
+    .curriculum-queue {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: curriculum;
+    }
+
+    .curriculum-queue li {
+      counter-increment: curriculum;
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(237, 231, 222, .76);
+      font-weight: 800;
+      line-height: 1.38;
+    }
+
+    .curriculum-queue li::before {
+      content: counter(curriculum, decimal-leading-zero);
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .curriculum-modules {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .curriculum-modules article {
+      min-height: 174px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .86);
+      box-shadow: 0 18px 42px rgba(29, 36, 51, .08);
+    }
+
+    .curriculum-modules span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--red);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .curriculum-modules b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.38rem, 2.2vw, 2.15rem);
+      line-height: .95;
+    }
+
+    .curriculum-modules p {
+      margin: 10px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-weight: 750;
+      line-height: 1.42;
+    }
+
     .job-strip {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1182,6 +1260,8 @@
       .academy-system,
       .dimension-grid,
       .video-grid,
+      .curriculum-board,
+      .curriculum-modules,
       .diagnosis-board,
       .sales-process,
       .operator-list,
@@ -1222,6 +1302,7 @@
       <a href="#staff-goals">Staff goals</a>
       <a href="#experience">Experience</a>
       <a href="#academy">Academy</a>
+      <a href="#curriculum">Curriculum</a>
       <a href="#operations">Operations</a>
       <a href="#sales">Sales</a>
       <a href="#product">Product</a>
@@ -1516,6 +1597,43 @@
           <b>ATP</b>
           <p>Use around-the-post examples to make advanced creativity feel learnable and joyful.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="slide" id="curriculum">
+      <p class="eyebrow">Curriculum build list</p>
+      <h2>Turn every core class into a clear HTML curriculum with video proof of the silly moments.</h2>
+      <div class="curriculum-board">
+        <ol class="curriculum-queue">
+          <li>Write the class promise: who it is for, why they should trust it, and how it helps them become more fun to play with.</li>
+          <li>Define the core skill progression: warmup, simplest version, coached reps, silly challenge, live-play transfer.</li>
+          <li>Identify the silly moments that lower the guard: easy misses, baby blocks, five-hole targets, kitchen lobs, paddle taps, and laughable resets.</li>
+          <li>Record short videos for each silly moment so staff can teach the same feel, not just the same words.</li>
+          <li>Package each class as an HTML page: promise, agenda, drills, video clips, coaching cues, host script, and follow-up invitation.</li>
+          <li>After running the class, record why it filled, who loved it, who should come back, and what next invitation it created.</li>
+        </ol>
+        <div class="curriculum-modules">
+          <article>
+            <span>First build</span>
+            <b>Baby Block Class</b>
+            <p>Players try to get the ball past the pro from kitchen line to kitchen line while the pro baby blocks and lets out-balls go.</p>
+          </article>
+          <article>
+            <span>Video needed</span>
+            <b>Five-hole baby block</b>
+            <p>Film the tiny calm block through the middle gap so players see that soft hands can beat big swings.</p>
+          </article>
+          <article>
+            <span>Format template</span>
+            <b>HTML curriculum page</b>
+            <p><a class="source-link" href="academy-curriculum.html">Open starter curriculum</a></p>
+          </article>
+          <article>
+            <span>Build queue</span>
+            <b>Score help, pro plays in, dink forever</b>
+            <p>Each core format needs the same package: promise, drills, silly moments, videos, and next-invite path.</p>
+          </article>
+        </div>
       </div>
     </section>
 

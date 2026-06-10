@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silly Pickleball Academy Curriculum</title>
+  <meta name="description" content="Internal Silly Pickleball Academy curriculum template for repeatable classes, drills, videos, and silly moments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F7F5F1;
+      --cream: #EDE7DE;
+      --ink: #1D2433;
+      --sage: #66786A;
+      --gold: #C8A15A;
+      --red: #9B6B52;
+      --line: rgba(29, 36, 51, .16);
+      --shadow: 0 24px 80px rgba(29, 36, 51, .14);
+      --sans: "Montserrat", Arial, sans-serif;
+      --display: "Fredoka", "Montserrat", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 16px clamp(18px, 4vw, 56px);
+      border-bottom: 1px solid rgba(29, 36, 51, .08);
+      background: rgba(247, 245, 241, .92);
+      backdrop-filter: blur(18px);
+      font-weight: 900;
+    }
+
+    .brand {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .ball {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 30% 36%, var(--paper) 0 2px, transparent 3px),
+        radial-gradient(circle at 63% 38%, var(--paper) 0 2px, transparent 3px),
+        radial-gradient(circle at 48% 68%, var(--paper) 0 2px, transparent 3px),
+        var(--gold);
+      box-shadow: inset 0 0 0 2px var(--ink);
+    }
+
+    main {
+      padding: clamp(56px, 7vw, 108px) clamp(20px, 5vw, 80px);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--red);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: var(--display);
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 1160px;
+      font-size: clamp(3.6rem, 8vw, 8.8rem);
+      line-height: .86;
+    }
+
+    h2 {
+      font-size: clamp(2.25rem, 4.8vw, 5.8rem);
+      line-height: .9;
+    }
+
+    h3 {
+      font-size: clamp(1.6rem, 2.6vw, 2.8rem);
+      line-height: .94;
+    }
+
+    .lede {
+      max-width: 850px;
+      margin: 24px 0 0;
+      color: rgba(29, 36, 51, .68);
+      font-size: clamp(1.06rem, 1.7vw, 1.34rem);
+      line-height: 1.48;
+      font-weight: 750;
+    }
+
+    section {
+      margin-top: clamp(54px, 7vw, 96px);
+      padding-top: clamp(28px, 4vw, 54px);
+      border-top: 1px solid var(--line);
+    }
+
+    .summary-grid,
+    .module-grid,
+    .video-grid,
+    .sales-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .card,
+    .module,
+    .video-card,
+    .sales-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(237, 231, 222, .76);
+      box-shadow: 0 18px 42px rgba(29, 36, 51, .08);
+    }
+
+    .card b,
+    .module b,
+    .video-card b,
+    .sales-card b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.36rem, 2vw, 2rem);
+      line-height: .96;
+    }
+
+    .card p,
+    .module p,
+    .video-card p,
+    .sales-card p,
+    .agenda li,
+    .script-box p {
+      color: rgba(29, 36, 51, .66);
+      font-weight: 750;
+      line-height: 1.45;
+    }
+
+    .card p,
+    .module p,
+    .video-card p,
+    .sales-card p {
+      margin: 10px 0 0;
+    }
+
+    .agenda {
+      display: grid;
+      gap: 10px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: agenda;
+    }
+
+    .agenda li {
+      counter-increment: agenda;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .86);
+    }
+
+    .agenda li::before {
+      content: counter(agenda, decimal-leading-zero);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .video-slot {
+      display: grid;
+      place-items: center;
+      min-height: 170px;
+      margin-bottom: 16px;
+      border: 2px dashed rgba(29, 36, 51, .2);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(200, 161, 90, .16), transparent 50%),
+        rgba(247, 245, 241, .72);
+      color: rgba(29, 36, 51, .56);
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .script-box {
+      margin-top: 28px;
+      padding: clamp(24px, 3vw, 36px);
+      border: 1px solid rgba(200, 161, 90, .34);
+      border-left: 8px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      background: rgba(247, 245, 241, .88);
+      box-shadow: var(--shadow);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 46px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .summary-grid,
+      .module-grid,
+      .video-grid,
+      .sales-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="ball" aria-hidden="true"></span>
+      <span>Silly Pickleball</span>
+    </a>
+    <a href="strategy.html#curriculum">Back to strategy</a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Silly Pickleball Academy curriculum</p>
+    <h1>Baby Block Class</h1>
+    <p class="lede">A repeatable class package for helping newer and intermediate players feel safe, skilled, and fun to play with. The goal is not just better technique. The goal is more Give n Receive: calmer partners, longer rallies, softer hands, and silly moments that lower the guard.</p>
+
+    <section aria-labelledby="promise-title">
+      <p class="eyebrow">Class promise</p>
+      <h2 id="promise-title">Players learn that tiny calm blocks can beat big swings.</h2>
+      <div class="summary-grid">
+        <article class="card">
+          <b>Who it is for</b>
+          <p>Lower-level and developing players who panic when pace comes at them, pop balls up, or feel embarrassed at the kitchen line.</p>
+        </article>
+        <article class="card">
+          <b>Five-star outcome</b>
+          <p>Players leave feeling safer, more useful to partners, and more willing to show up again because the class made defense social and funny.</p>
+        </article>
+        <article class="card">
+          <b>Silly hook</b>
+          <p>The pro baby blocks, lets out-balls go, and makes the drill feel like a game instead of a technical lecture.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="agenda-title">
+      <p class="eyebrow">Class flow</p>
+      <h2 id="agenda-title">Run the same emotional arc every time.</h2>
+      <ol class="agenda">
+        <li><strong>Welcome and score-safe framing.</strong> Make it clear nobody is here to be judged. The room is for calm hands, funny misses, and getting one ball better.</li>
+        <li><strong>Demo the tiny motion.</strong> Pro shows big swing versus baby block. Players see the ball die softly instead of flying.</li>
+        <li><strong>Kitchen-line baby block.</strong> Players try to get the ball by the pro from kitchen line to kitchen line while the pro baby blocks and lets out-balls go.</li>
+        <li><strong>Five-hole challenge.</strong> Players aim through the middle gap. The silly target makes touch memorable and lowers pressure.</li>
+        <li><strong>Feet target transfer.</strong> Players block to the opponent's feet so defense becomes a way to give partners a better next ball.</li>
+        <li><strong>Live-play invite.</strong> End by pairing people who should play again and naming the next class, social, or practice path.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="modules-title">
+      <p class="eyebrow">Curriculum modules</p>
+      <h2 id="modules-title">Each class module needs skill, silly moment, and connection purpose.</h2>
+      <div class="module-grid">
+        <article class="module">
+          <b>Baby block basics</b>
+          <p>Ready position, quiet paddle, short motion, firm enough grip, and no panic swing.</p>
+        </article>
+        <article class="module">
+          <b>Let out-balls go</b>
+          <p>Teach players that value comes from judgment and calm, not touching every ball.</p>
+        </article>
+        <article class="module">
+          <b>Block to feet</b>
+          <p>Turn defense into a generous ball that helps the team, not just survival.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="videos-title">
+      <p class="eyebrow">Video capture list</p>
+      <h2 id="videos-title">Record the moments staff must be able to copy.</h2>
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-slot">Video slot 01</div>
+          <b>Pro baby blocks everything</b>
+          <p>Show the pro calmly absorbing balls while players try to pass from kitchen line to kitchen line.</p>
+        </article>
+        <article class="video-card">
+          <div class="video-slot">Video slot 02</div>
+          <b>Five-hole target</b>
+          <p>Show the silly middle-gap aim so the drill is easy for staff to explain and players to remember.</p>
+        </article>
+        <article class="video-card">
+          <div class="video-slot">Video slot 03</div>
+          <b>Out-ball discipline</b>
+          <p>Show the funny moment where the player wants to swing, the pro lets it go, and everyone learns calm judgment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="sales-title">
+      <p class="eyebrow">Fill and follow-up</p>
+      <h2 id="sales-title">The curriculum is also the sales process.</h2>
+      <div class="sales-grid">
+        <article class="sales-card">
+          <b>Before class</b>
+          <p>Invite the anxious player by name: this is a safe class for learning soft hands, not a competitive test.</p>
+        </article>
+        <article class="sales-card">
+          <b>During class</b>
+          <p>Notice who laughed, who relaxed, who helped someone else, and who should be paired again.</p>
+        </article>
+        <article class="sales-card">
+          <b>After class</b>
+          <p>Send the next invite: another Baby Block, Dink Forever, Score-Help Social, or Pro Plays In.</p>
+        </article>
+      </div>
+      <div class="script-box">
+        <h3>Host script</h3>
+        <p>"Today is about becoming more fun to play with. If you can take a hard ball and give your partner a calm next ball, people will want you on their court. We are going to make that feel simple, silly, and safe."</p>
+      </div>
+    </section>
+
+    <div class="footer-nav">
+      <a class="button" href="strategy.html#curriculum">Strategy slide</a>
+      <a class="button" href="https://4dpickleball.com/" target="_blank" rel="noreferrer">4D Pickleball</a>
+    </div>
+  </main>
+</body>
+</html>
