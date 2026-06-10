@@ -543,6 +543,7 @@ a {
 .tic-art span,
 .reset-art span,
 .out-art span,
+.trick-art span,
 .lob-art span,
 .sitter-art span,
 .weird-art span,
@@ -580,6 +581,49 @@ a {
   border-radius: 10px;
   background: var(--ink);
   transform: rotate(-8deg);
+}
+
+.trick-art i {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 48px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.trick-art em {
+  position: absolute;
+  right: 24px;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--red);
+}
+
+.trick-art span:nth-of-type(1) {
+  left: 36px;
+  top: 34px;
+}
+
+.trick-art span:nth-of-type(2) {
+  left: 50%;
+  top: 18px;
+  background:
+    radial-gradient(circle at 38% 36%, rgba(255,255,255,.92) 0 2px, transparent 3px),
+    var(--red);
+}
+
+.trick-art span:nth-of-type(3) {
+  right: 16px;
+  bottom: 20px;
+}
+
+.trick-art::before {
+  border-style: dashed;
+  border-color: rgba(91, 143, 212, .45);
 }
 
 .out-art i {
