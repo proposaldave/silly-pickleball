@@ -438,6 +438,167 @@
       line-height: .94;
     }
 
+    .density-slide {
+      text-align: center;
+    }
+
+    .density-slide h2 {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .gnr-wordmark .give { color: var(--blue); }
+    .gnr-wordmark .n { color: var(--gold); font-style: italic; }
+    .gnr-wordmark .receive { color: var(--red); }
+
+    .density-subhead {
+      max-width: 820px;
+      margin: 24px auto 0;
+      color: rgba(29, 36, 51, .72);
+      font-size: clamp(1rem, 1.8vw, 1.42rem);
+      line-height: 1.22;
+      font-weight: 850;
+    }
+
+    .density-flow {
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) 66px minmax(240px, 1fr) 66px minmax(240px, 1fr);
+      gap: 16px;
+      align-items: center;
+      margin-top: 38px;
+      text-align: left;
+    }
+
+    .density-card {
+      min-height: 340px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-top: 7px solid var(--gold);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .84);
+      box-shadow: var(--shadow);
+    }
+
+    .density-card.red-top { border-top-color: var(--red); }
+    .density-card.blue-top { border-top-color: var(--blue); }
+
+    .density-label {
+      margin-bottom: 18px;
+      color: rgba(29, 36, 51, .58);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .density-mini {
+      position: relative;
+      height: 100px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(29, 36, 51, .12);
+      background: rgba(237, 231, 222, .72);
+      overflow: hidden;
+    }
+
+    .density-mini::before {
+      content: "";
+      position: absolute;
+      left: 16%;
+      right: 16%;
+      top: 52%;
+      border-top: 3px solid rgba(200, 161, 90, .42);
+      transform: rotate(-8deg);
+    }
+
+    .density-mini.connected::before,
+    .density-mini.connected::after {
+      content: "";
+      position: absolute;
+      inset: 24px 56px;
+      border: 3px solid rgba(91, 143, 212, .36);
+      border-radius: 50%;
+      transform: rotate(14deg);
+    }
+
+    .density-mini.connected::after {
+      inset: 31px 86px;
+      border-color: rgba(200, 161, 90, .44);
+      transform: rotate(-16deg);
+    }
+
+    .density-mini.dense::before,
+    .density-mini.dense::after {
+      content: "";
+      position: absolute;
+      inset: 23px 50px;
+      border: 3px solid rgba(91, 143, 212, .42);
+      border-radius: 50%;
+      transform: rotate(-8deg);
+    }
+
+    .density-mini.dense::after {
+      inset: 31px 78px;
+      border-color: rgba(200, 70, 44, .22);
+      transform: rotate(18deg);
+    }
+
+    .density-mini i {
+      position: absolute;
+      z-index: 1;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .density-mini i:nth-child(1) { left: 22%; top: 46%; background: var(--red); }
+    .density-mini i:nth-child(2) { left: 38%; top: 30%; }
+    .density-mini i:nth-child(3) { left: 56%; top: 55%; background: var(--blue); }
+    .density-mini i:nth-child(4) { left: 76%; top: 40%; }
+
+    .density-card h3 {
+      font-size: clamp(2rem, 3.6vw, 4.2rem);
+    }
+
+    .density-card p {
+      margin: 16px 0 0;
+      color: rgba(29, 36, 51, .68);
+      font-weight: 800;
+      line-height: 1.36;
+    }
+
+    .flow-arrow {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      justify-self: center;
+      border: 2px solid rgba(200, 161, 90, .46);
+      border-radius: 999px;
+      background: rgba(247, 245, 241, .82);
+      color: var(--gold);
+      font-size: 2rem;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(29, 36, 51, .09);
+    }
+
+    .density-outcome {
+      max-width: 940px;
+      margin: 30px auto 0;
+      padding: 20px 24px;
+      border: 1px solid rgba(200, 161, 90, .34);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .86);
+      box-shadow: 0 18px 46px rgba(29, 36, 51, .08);
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 3vw, 3.4rem);
+      line-height: .96;
+    }
+
+    .density-outcome strong {
+      color: var(--gold);
+    }
+
     .pulse-board {
       display: grid;
       grid-template-columns: minmax(280px, .74fr) minmax(320px, 1fr);
@@ -738,6 +899,7 @@
       .two-col,
       .card-grid,
       .formula,
+      .density-flow,
       .pulse-board,
       .operator-list,
       .job-strip,
@@ -749,6 +911,10 @@
 
       .versus-badge {
         margin: 0 auto;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
       }
 
       .journey-line {
@@ -826,6 +992,35 @@
           </article>
         </div>
       </div>
+    </section>
+
+    <section class="slide density-slide">
+      <p class="eyebrow">Connection density</p>
+      <h2>Humans go where they feel the most <span class="gnr-wordmark"><span class="give">Give</span> <span class="n">n</span> <span class="receive">Receive</span></span>.</h2>
+      <p class="density-subhead">The measurable reason members stay, invite, and bring their lives back is connection density.</p>
+      <div class="density-flow">
+        <article class="density-card red-top">
+          <div class="density-label">Without GnR</div>
+          <div class="density-mini"><i></i><i></i><i></i><i></i></div>
+          <h3>Replaceable venue</h3>
+          <p>Members compare price, distance, open slots, ratings, and match quality.</p>
+        </article>
+        <div class="flow-arrow">></div>
+        <article class="density-card">
+          <div class="density-label">GnR layer</div>
+          <div class="density-mini connected"><i></i><i></i><i></i><i></i></div>
+          <h3>Connection density</h3>
+          <p>Who fits. Who gives. Who is missed. Who needs the invite.</p>
+        </article>
+        <div class="flow-arrow">></div>
+        <article class="density-card blue-top">
+          <div class="density-label">With GnR</div>
+          <div class="density-mini dense"><i></i><i></i><i></i><i></i></div>
+          <h3>Hard-to-leave club</h3>
+          <p>Members stay for the people and the <span class="gnr-wordmark"><span class="give">Give</span> <span class="n">n</span> <span class="receive">Receive</span></span> community.</p>
+        </article>
+      </div>
+      <div class="density-outcome"><strong>Business outcome:</strong> retention, referrals, and pricing power come from the social graph.</div>
     </section>
 
     <section class="slide dark" id="market">
