@@ -266,6 +266,122 @@
       margin-bottom: 20px;
     }
 
+    .star-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 22px 0 18px;
+    }
+
+    .star-row span {
+      width: clamp(28px, 3vw, 42px);
+      height: clamp(28px, 3vw, 42px);
+      color: transparent;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 61% 34%, 97% 34%, 68% 55%, 79% 90%, 50% 68%, 21% 90%, 32% 55%, 3% 34%, 39% 34%);
+    }
+
+    .definition-bar {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 26px;
+      border: 1px solid rgba(91, 143, 212, .26);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .88);
+      box-shadow: 0 18px 46px rgba(29, 36, 51, .08);
+      color: rgba(29, 36, 51, .72);
+      font-size: clamp(1rem, 1.7vw, 1.32rem);
+      line-height: 1.26;
+      font-weight: 850;
+      text-align: center;
+    }
+
+    .definition-bar strong {
+      color: var(--ink);
+    }
+
+    .journey-line {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      max-width: 1030px;
+      margin: 36px auto 14px;
+      padding: 0 34px;
+    }
+
+    .journey-line::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 50%;
+      height: 5px;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, var(--gold), var(--gold), var(--blue));
+      border-radius: 999px;
+    }
+
+    .journey-line i {
+      position: relative;
+      z-index: 1;
+      width: 24px;
+      height: 24px;
+      justify-self: center;
+      border: 5px solid var(--gold);
+      border-radius: 999px;
+      background: var(--paper);
+    }
+
+    .journey-line i:last-child {
+      border-color: var(--blue);
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .journey-grid article {
+      min-height: 245px;
+      padding: 18px 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(200, 161, 90, .10), transparent 54%),
+        rgba(247, 245, 241, .82);
+      box-shadow: 0 18px 42px rgba(29, 36, 51, .08);
+    }
+
+    .journey-grid span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 92px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--paper);
+      font-weight: 900;
+    }
+
+    .journey-grid b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.35rem, 2.2vw, 2.25rem);
+      line-height: .92;
+    }
+
+    .journey-grid p {
+      margin: 10px 0 0;
+      color: rgba(29, 36, 51, .68);
+      font-size: .92rem;
+      line-height: 1.28;
+      font-weight: 800;
+    }
+
     .image-panel {
       margin: 0;
       padding: 14px;
@@ -532,12 +648,21 @@
       .operator-list,
       .job-strip,
       .learning-board,
-      .quality-pair {
+      .quality-pair,
+      .journey-grid {
         grid-template-columns: 1fr;
       }
 
       .versus-badge {
         margin: 0 auto;
+      }
+
+      .journey-line {
+        display: none;
+      }
+
+      .journey-grid span {
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -638,38 +763,41 @@
     </section>
 
     <section class="slide" id="experience">
-      <p class="eyebrow">Five-star experience</p>
-      <h2>A good event is not measured by drills completed. It is measured by connection created.</h2>
-      <div class="card-grid">
-        <article class="numbered-card">
+      <p class="eyebrow">Five-star community experience</p>
+      <h2>Five Star Community Experience</h2>
+      <div class="star-row" aria-label="five stars"><span>*</span><span>*</span><span>*</span><span>*</span><span>*</span></div>
+      <div class="definition-bar"><strong>Definition:</strong> a lower-level player who worries about being good enough leaves feeling safe, wanted, well-matched, helped by the community, and personally invited back.</div>
+      <div class="journey-line" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="journey-grid">
+        <article>
           <span>01</span>
-          <b>Right place</b>
-          <p>New and lower-level players feel welcomed, not judged.</p>
+          <b>Safe to show up</b>
+          <p>No fear about level or making people mad.</p>
         </article>
-        <article class="numbered-card">
+        <article>
           <span>02</span>
-          <b>Caring pros</b>
-          <p>Instruction builds confidence and community at the same time.</p>
+          <b>Wanted by name</b>
+          <p>Warm call, personal invite, real welcome.</p>
         </article>
-        <article class="numbered-card">
+        <article>
           <span>03</span>
-          <b>Right vibe</b>
-          <p>Friendly players help social-first players relax and belong.</p>
+          <b>Matched to people</b>
+          <p>Right level, right vibe, bridge players.</p>
         </article>
-        <article class="numbered-card">
+        <article>
           <span>04</span>
-          <b>Fitted invitations</b>
-          <p>Thoughtful invites find the right people, level, and event format.</p>
+          <b>Hosted energy</b>
+          <p>Music, intros, humor, owner and pro presence.</p>
         </article>
-        <article class="numbered-card">
+        <article>
           <span>05</span>
-          <b>Enough ways in</b>
-          <p>Clinics, socials, beginner play, and special events make the calendar feel abundant.</p>
+          <b>Helped up</b>
+          <p>Generous players make improvement feel social.</p>
         </article>
-        <article class="numbered-card">
+        <article>
           <span>06</span>
-          <b>We listen</b>
-          <p>Feedback shapes the next experience around players' needs.</p>
+          <b>Invited back</b>
+          <p>Next event, lesson path, member path, referral.</p>
         </article>
       </div>
     </section>
