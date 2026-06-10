@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Silly Pickleball Internal Strategy</title>
+  <meta name="description" content="Internal strategy presentation for Silly Pickleball as a five-star connection-first community product.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F7F5F1;
+      --cream: #EDE7DE;
+      --ink: #1D2433;
+      --sage: #66786A;
+      --gold: #C8A15A;
+      --red: #9B6B52;
+      --line: rgba(29, 36, 51, .16);
+      --shadow: 0 24px 80px rgba(29, 36, 51, .14);
+      --sans: "Montserrat", Arial, sans-serif;
+      --display: "Fredoka", "Montserrat", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .strategy-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px clamp(18px, 4vw, 56px);
+      border-bottom: 1px solid rgba(29, 36, 51, .08);
+      background: rgba(247, 245, 241, .92);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+    }
+
+    .brand-ball {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 30% 36%, var(--paper) 0 2px, transparent 3px),
+        radial-gradient(circle at 63% 38%, var(--paper) 0 2px, transparent 3px),
+        radial-gradient(circle at 48% 68%, var(--paper) 0 2px, transparent 3px),
+        var(--gold);
+      box-shadow: inset 0 0 0 2px var(--ink);
+    }
+
+    .strategy-nav {
+      display: flex;
+      gap: clamp(12px, 2vw, 26px);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(29, 36, 51, .62);
+    }
+
+    .slide {
+      min-height: 100vh;
+      padding: clamp(76px, 8vw, 120px) clamp(22px, 5vw, 82px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--red);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: var(--display);
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 1200px;
+      font-size: clamp(3.9rem, 9vw, 9.6rem);
+      line-height: .86;
+    }
+
+    h2 {
+      max-width: 1060px;
+      font-size: clamp(2.8rem, 6.4vw, 7.2rem);
+      line-height: .88;
+    }
+
+    h3 {
+      font-size: clamp(1.7rem, 3vw, 3.2rem);
+      line-height: .94;
+    }
+
+    .hero {
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(247, 245, 241, .98) 0 48%, rgba(247, 245, 241, .82)),
+        url("assets/pickleball-is-silly-moments-map.png") right center / min(58vw, 980px) auto no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 34%;
+      background: linear-gradient(0deg, rgba(200, 161, 90, .18), transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+    }
+
+    .thesis-card {
+      max-width: 980px;
+      margin-top: 34px;
+      padding: clamp(22px, 3vw, 34px);
+      border-left: 6px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      background: rgba(237, 231, 222, .9);
+      box-shadow: var(--shadow);
+      font-size: clamp(1.18rem, 2vw, 1.7rem);
+      line-height: 1.36;
+      font-weight: 800;
+    }
+
+    .thesis-card strong {
+      color: var(--red);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(280px, .78fr) minmax(320px, 1fr);
+      gap: clamp(32px, 6vw, 88px);
+      align-items: start;
+    }
+
+    .lede {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: rgba(29, 36, 51, .68);
+      font-size: clamp(1.06rem, 1.7vw, 1.34rem);
+      line-height: 1.48;
+      font-weight: 750;
+    }
+
+    .value-chain {
+      display: grid;
+      gap: 12px;
+    }
+
+    .chain-step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(237, 231, 222, .72);
+    }
+
+    .chain-step span,
+    .numbered-card span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--paper);
+      font-weight: 900;
+    }
+
+    .chain-step b,
+    .numbered-card b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.55rem, 2.4vw, 2.55rem);
+      line-height: .96;
+    }
+
+    .chain-step p,
+    .numbered-card p {
+      margin: 8px 0 0;
+      color: rgba(29, 36, 51, .64);
+      font-weight: 750;
+      line-height: 1.45;
+    }
+
+    .dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .dark .lede,
+    .dark .numbered-card p,
+    .dark .chain-step p {
+      color: rgba(247, 245, 241, .68);
+    }
+
+    .dark .chain-step,
+    .dark .numbered-card {
+      border-color: rgba(247, 245, 241, .16);
+      background: rgba(247, 245, 241, .08);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .numbered-card {
+      min-height: 216px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .84);
+      box-shadow: 0 18px 42px rgba(29, 36, 51, .08);
+    }
+
+    .numbered-card span {
+      margin-bottom: 20px;
+    }
+
+    .image-panel {
+      margin: 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .74);
+      box-shadow: var(--shadow);
+    }
+
+    .image-panel img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid rgba(29, 36, 51, .12);
+    }
+
+    .image-panel figcaption {
+      margin-top: 12px;
+      color: rgba(29, 36, 51, .58);
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .formula {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 38px;
+      border: 1px solid rgba(247, 245, 241, .18);
+      background: rgba(247, 245, 241, .18);
+    }
+
+    .formula div {
+      min-height: 170px;
+      padding: 22px;
+      background: var(--ink);
+    }
+
+    .formula b {
+      display: block;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .formula p {
+      margin: 20px 0 0;
+      color: var(--paper);
+      font-family: var(--display);
+      font-size: clamp(1.55rem, 2.5vw, 2.55rem);
+      line-height: .94;
+    }
+
+    .operator-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .operator-list article {
+      padding: 24px;
+      border-left: 5px solid var(--sage);
+      border-radius: 0 8px 8px 0;
+      background: rgba(237, 231, 222, .76);
+    }
+
+    .operator-list b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.45rem, 2.4vw, 2.4rem);
+      line-height: .96;
+    }
+
+    .operator-list p {
+      margin: 10px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-weight: 750;
+      line-height: 1.45;
+    }
+
+    .closing {
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(0deg, rgba(29, 36, 51, .78), rgba(29, 36, 51, .84)),
+        url("assets/silly-pickleball-academy-map.png") center / cover no-repeat;
+      color: var(--paper);
+    }
+
+    .closing .thesis-card {
+      color: var(--ink);
+    }
+
+    @media (max-width: 980px) {
+      .strategy-nav { display: none; }
+      .hero { background-size: 95vw auto; background-position: center bottom; align-items: start; }
+      .hero-inner { padding-bottom: 52vw; }
+      .two-col,
+      .card-grid,
+      .formula,
+      .operator-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="strategy-header">
+    <a class="brand-row" href="index.html" aria-label="Silly Pickleball home">
+      <span class="brand-ball" aria-hidden="true"></span>
+      <span>Silly Pickleball</span>
+    </a>
+    <nav class="strategy-nav" aria-label="Strategy sections">
+      <a href="#thesis">Thesis</a>
+      <a href="#market">Market</a>
+      <a href="#experience">Experience</a>
+      <a href="#product">Product</a>
+      <a href="#measurement">Measurement</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="slide hero" id="thesis">
+      <div class="hero-inner">
+        <p class="eyebrow">Internal strategy</p>
+        <h1>Connection is the product.</h1>
+        <div class="thesis-card">
+          If players feel real human connection, it was a good event. If they do not, it was not valuable. <strong>The more connection people feel, the more valuable the experience becomes.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Value logic</p>
+          <h2>Connection turns play into loyalty, referrals, and pricing power.</h2>
+          <p class="lede">Silliness is not the end goal. Silliness is the social lubricant that lets lower-level players relax, connect, and decide that this club is where they belong.</p>
+        </div>
+        <div class="value-chain">
+          <article class="chain-step">
+            <span>01</span>
+            <div>
+              <b>Players feel safe.</b>
+              <p>They are not judged for score confusion, weird form, easy misses, or beginner uncertainty.</p>
+            </div>
+          </article>
+          <article class="chain-step">
+            <span>02</span>
+            <div>
+              <b>Players connect.</b>
+              <p>They have a real moment with staff, pros, partners, and other players at their level.</p>
+            </div>
+          </article>
+          <article class="chain-step">
+            <span>03</span>
+            <div>
+              <b>Players come back.</b>
+              <p>The event becomes emotionally meaningful, not just another class on a calendar.</p>
+            </div>
+          </article>
+          <article class="chain-step">
+            <span>04</span>
+            <div>
+              <b>Players refer friends.</b>
+              <p>Five-star connection creates warm word of mouth, higher loyalty, and more willingness to pay.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide dark" id="market">
+      <p class="eyebrow">Market wedge</p>
+      <h2>Lower-level players are the community market.</h2>
+      <p class="lede">Competitive players care about ratings, brackets, and quality games. Connection-first players care about whether they feel welcome, whether the room is kind, and whether they have a reason to return.</p>
+      <div class="formula">
+        <div>
+          <b>Need</b>
+          <p>Feel welcome</p>
+        </div>
+        <div>
+          <b>Fear</b>
+          <p>Look foolish</p>
+        </div>
+        <div>
+          <b>Hook</b>
+          <p>Silly is safe</p>
+        </div>
+        <div>
+          <b>Outcome</b>
+          <p>Belong here</p>
+        </div>
+        <div>
+          <b>Growth</b>
+          <p>Bring friends</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="experience">
+      <p class="eyebrow">Five-star experience</p>
+      <h2>A good event is not measured by drills completed. It is measured by connection created.</h2>
+      <div class="card-grid">
+        <article class="numbered-card">
+          <span>01</span>
+          <b>Right place</b>
+          <p>New and lower-level players feel welcomed, not judged.</p>
+        </article>
+        <article class="numbered-card">
+          <span>02</span>
+          <b>Caring pros</b>
+          <p>Instruction builds confidence and community at the same time.</p>
+        </article>
+        <article class="numbered-card">
+          <span>03</span>
+          <b>Right vibe</b>
+          <p>Friendly players help social-first players relax and belong.</p>
+        </article>
+        <article class="numbered-card">
+          <span>04</span>
+          <b>Fitted invitations</b>
+          <p>Thoughtful invites find the right people, level, and event format.</p>
+        </article>
+        <article class="numbered-card">
+          <span>05</span>
+          <b>Enough ways in</b>
+          <p>Clinics, socials, beginner play, and special events make the calendar feel abundant.</p>
+        </article>
+        <article class="numbered-card">
+          <span>06</span>
+          <b>We listen</b>
+          <p>Feedback shapes the next experience around players' needs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Brand mechanism</p>
+          <h2>Silly moments lower the guard.</h2>
+          <p class="lede">The name, the score, the kitchen, the wiffle ball, the easy miss, and the paddle tap all tell players the same thing: nobody has to posture here.</p>
+        </div>
+        <figure class="image-panel">
+          <img src="assets/pickleball-is-silly-moments-map.png" alt="Pickleball is silly visual map">
+          <figcaption>Moment map</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="slide" id="product">
+      <p class="eyebrow">Product system</p>
+      <h2>We are building repeatable formats that create connection on purpose.</h2>
+      <div class="operator-list">
+        <article>
+          <b>Score-help social</b>
+          <p>Make confusion normal. Staff helps players keep score so nobody feels exposed.</p>
+        </article>
+        <article>
+          <b>Baby block class</b>
+          <p>Use silly low-stakes drills to make newer players feel capable fast.</p>
+        </article>
+        <article>
+          <b>Pro plays in</b>
+          <p>Pros create approachable moments: kitchen lobs, easy balls, playful resets, and confidence-building rallies.</p>
+        </article>
+        <article>
+          <b>Invitation round</b>
+          <p>Every good event ends with a prompt: who should be invited next, and by whom?</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Academy map</p>
+          <h2>The academy is the packaging for repeatable belonging.</h2>
+          <p class="lede">Classes are not just instruction. Each format is a social container that helps lower-level players feel progress, safety, and connection.</p>
+        </div>
+        <figure class="image-panel">
+          <img src="assets/silly-pickleball-academy-map.png" alt="Silly Pickleball Academy visual map">
+          <figcaption>Academy map</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="slide dark" id="measurement">
+      <p class="eyebrow">Operating KPI</p>
+      <h2>If connection is the value, measure connection.</h2>
+      <div class="card-grid">
+        <article class="numbered-card">
+          <span>01</span>
+          <b>Did they feel welcome?</b>
+          <p>The first five-star signal for social-first players.</p>
+        </article>
+        <article class="numbered-card">
+          <span>02</span>
+          <b>Did they meet someone?</b>
+          <p>The event created real human value, not just court usage.</p>
+        </article>
+        <article class="numbered-card">
+          <span>03</span>
+          <b>Would they come back?</b>
+          <p>Loyalty is the practical proof that the experience mattered.</p>
+        </article>
+        <article class="numbered-card">
+          <span>04</span>
+          <b>Would they bring a friend?</b>
+          <p>Referral intent is the sales engine hiding inside the community experience.</p>
+        </article>
+        <article class="numbered-card">
+          <span>05</span>
+          <b>Who should be invited next?</b>
+          <p>The invitation graph gets smarter after every event.</p>
+        </article>
+        <article class="numbered-card">
+          <span>06</span>
+          <b>What should staff change?</b>
+          <p>Feedback turns each event into a better next event.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide closing">
+      <div class="hero-inner">
+        <p class="eyebrow">Internal strategy close</p>
+        <h2>Win the silliness market by owning the five-star connection experience.</h2>
+        <div class="thesis-card">
+          The brand promise is simple: <strong>let your guard down, meet the right people, and want to come back.</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
