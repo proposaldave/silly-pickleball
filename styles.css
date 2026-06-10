@@ -584,46 +584,40 @@ a {
   font-size: 1.12rem;
 }
 
-.interest-form {
+.join-points {
   display: grid;
-  gap: 14px;
-  padding: 22px;
-  background: var(--ink);
-  color: var(--paper);
+  gap: 12px;
+}
+
+.join-points article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  row-gap: 4px;
+  padding: 18px;
+  background: rgba(255, 255, 255, .68);
+  border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
-.interest-form label {
-  display: grid;
-  gap: 7px;
-  font-size: .8rem;
-  font-weight: 850;
-  color: rgba(251, 247, 239, .72);
-}
-
-.interest-form input,
-.interest-form select {
-  width: 100%;
-  min-height: 46px;
-  padding: 0 12px;
-  border: 1px solid rgba(251, 247, 239, .22);
-  border-radius: 6px;
-  background: rgba(251, 247, 239, .08);
-  color: var(--paper);
-  font: 750 .95rem var(--sans);
-}
-
-.interest-form select option {
-  color: var(--ink);
-}
-
-.form-status {
-  min-height: 20px;
-  margin: 0;
+.join-points span {
+  grid-row: span 2;
   color: var(--gold);
-  font-size: .86rem;
-  font-weight: 750;
+  font: 900 .78rem var(--sans);
+  letter-spacing: .12em;
+}
+
+.join-points b {
+  color: var(--ink);
+  font: 850 1.04rem var(--sans);
+}
+
+.join-points p {
+  margin: 0;
+  color: rgba(26, 22, 18, .68);
+  font-size: .95rem;
+  line-height: 1.42;
 }
 
 .site-footer {
