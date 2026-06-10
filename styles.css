@@ -182,7 +182,8 @@ a {
 .variant-band,
 .rituals,
 .join,
-.product-strip {
+.product-strip,
+.invitation-graph {
   padding: clamp(54px, 8vw, 104px) clamp(20px, 5vw, 76px);
 }
 
@@ -208,6 +209,15 @@ a {
   line-height: .9;
   font-weight: 900;
   text-wrap: balance;
+}
+
+.section-lede {
+  max-width: 760px;
+  margin: 20px 0 0;
+  color: rgba(26, 22, 18, .68);
+  font-size: clamp(1rem, 1.5vw, 1.22rem);
+  line-height: 1.5;
+  font-weight: 750;
 }
 
 .concept-grid {
@@ -373,6 +383,81 @@ a {
   font-weight: 750;
 }
 
+.invitation-graph {
+  background: var(--paper);
+}
+
+.graph-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 34px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.graph-grid article {
+  min-height: 250px;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(200, 161, 90, .12), transparent 60%),
+    var(--cream);
+}
+
+.graph-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 28px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.graph-grid b {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: .92;
+}
+
+.graph-grid p {
+  margin: 16px 0 0;
+  color: rgba(26, 22, 18, .66);
+  font-weight: 750;
+  line-height: 1.48;
+}
+
+.referral-callout {
+  display: grid;
+  grid-template-columns: minmax(240px, .55fr) minmax(260px, 1fr);
+  gap: clamp(18px, 4vw, 44px);
+  align-items: center;
+  margin-top: 18px;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid rgba(102, 120, 106, .26);
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.referral-callout b {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  line-height: .9;
+}
+
+.referral-callout p {
+  margin: 0;
+  color: rgba(247, 245, 241, .74);
+  font-size: clamp(1rem, 1.6vw, 1.28rem);
+  line-height: 1.48;
+  font-weight: 750;
+}
+
 .join {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(300px, 470px);
@@ -447,6 +532,7 @@ a {
   .section-head,
   .product-strip,
   .join,
+  .referral-callout,
   .concept-card {
     grid-template-columns: 1fr;
   }
@@ -456,6 +542,10 @@ a {
   }
 
   .ritual-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .graph-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -496,6 +586,7 @@ a {
   }
 
   .ritual-grid,
+  .graph-grid,
   .event-list {
     grid-template-columns: 1fr;
   }
