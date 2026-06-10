@@ -438,6 +438,99 @@
       line-height: .94;
     }
 
+    .pulse-board {
+      display: grid;
+      grid-template-columns: minmax(280px, .74fr) minmax(320px, 1fr);
+      gap: clamp(28px, 5vw, 70px);
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    .pulse-visual {
+      min-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(154deg, transparent 0 43%, rgba(91, 143, 212, .12) 43.2% 43.6%, transparent 43.8%),
+        linear-gradient(24deg, transparent 0 43%, rgba(200, 161, 90, .12) 43.2% 43.6%, transparent 43.8%),
+        rgba(237, 231, 222, .72);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pulse-visual::before {
+      content: "";
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      top: 58px;
+      height: 94px;
+      background:
+        linear-gradient(150deg, rgba(200, 70, 44, .18) 0 42%, transparent 42.4%),
+        linear-gradient(210deg, rgba(91, 143, 212, .18) 0 42%, transparent 42.4%),
+        rgba(247, 245, 241, .72);
+      clip-path: polygon(0 0, 100% 0, 64% 100%, 36% 100%);
+    }
+
+    .pulse-visual i {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 8px 18px rgba(29, 36, 51, .16);
+    }
+
+    .pulse-visual i:nth-child(1) { left: 30%; top: 82px; background: var(--red); }
+    .pulse-visual i:nth-child(2) { left: 42%; top: 124px; }
+    .pulse-visual i:nth-child(3) { left: 48%; top: 96px; }
+    .pulse-visual i:nth-child(4) { left: 55%; top: 128px; background: var(--red); }
+    .pulse-visual i:nth-child(5) { left: 66%; top: 82px; background: var(--gold); }
+
+    .pulse-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pulse-list article {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      align-items: center;
+      min-height: 82px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .82);
+      box-shadow: 0 14px 34px rgba(29, 36, 51, .07);
+    }
+
+    .pulse-list span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: var(--paper);
+      font-weight: 900;
+    }
+
+    .pulse-list b {
+      font-size: clamp(1rem, 1.5vw, 1.22rem);
+      line-height: 1.15;
+    }
+
+    .pulse-close {
+      margin-top: 18px;
+      color: var(--blue);
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 4vw, 4.9rem);
+      line-height: .9;
+    }
+
     .operator-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -645,6 +738,7 @@
       .two-col,
       .card-grid,
       .formula,
+      .pulse-board,
       .operator-list,
       .job-strip,
       .learning-board,
@@ -758,6 +852,31 @@
         <div>
           <b>Growth</b>
           <p>Bring friends</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Community pulse</p>
+      <h2>Demand comes from connection and invitation.</h2>
+      <div class="pulse-board">
+        <div>
+          <div class="pulse-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="pulse-close">Warm demand is created in the room.</div>
+        </div>
+        <div class="pulse-list">
+          <article>
+            <span>01</span>
+            <b>Dave and pros hear the player truth.</b>
+          </article>
+          <article>
+            <span>02</span>
+            <b>Member-only play with Dave, Samara, and pros creates real signal.</b>
+          </article>
+          <article>
+            <span>03</span>
+            <b>Lower-level socials are built from warm demand, not cold programming guesses.</b>
+          </article>
         </div>
       </div>
     </section>
