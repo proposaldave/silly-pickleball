@@ -182,7 +182,6 @@ a {
 .variant-band,
 .five-star,
 .visual-maps,
-.rituals,
 .join,
 .product-strip,
 .invitation-graph {
@@ -450,72 +449,10 @@ a {
   font-weight: 750;
 }
 
-.rituals {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.ritual-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1px;
-  margin-top: 34px;
-  background: rgba(251, 247, 239, .16);
-  border: 1px solid rgba(251, 247, 239, .16);
-}
-
-.ritual-grid article {
-  min-height: 270px;
-  padding: 24px;
-  background: var(--ink);
-}
-
-.ritual-grid span {
-  display: block;
-  margin-bottom: 28px;
-  color: var(--gold);
-  font-weight: 850;
-}
-
-.ritual-grid h3 {
-  margin: 0 0 16px;
-  font-family: var(--serif);
-  font-size: clamp(1.55rem, 2.5vw, 2.6rem);
-  line-height: .94;
-}
-
-.ritual-grid p,
 .join-copy p {
   margin: 0;
   color: rgba(251, 247, 239, .68);
   line-height: 1.48;
-}
-
-.full-inventory {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 28px;
-  color: var(--paper);
-}
-
-.full-inventory b,
-.full-inventory span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 0 12px;
-  border: 1px solid rgba(247, 245, 241, .18);
-  border-radius: 999px;
-  background: rgba(247, 245, 241, .08);
-  font-size: .78rem;
-  font-weight: 800;
-}
-
-.full-inventory b {
-  background: var(--gold);
-  color: var(--ink);
-  border-color: transparent;
 }
 
 .product-strip {
@@ -714,10 +651,6 @@ a {
     display: block;
   }
 
-  .ritual-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .graph-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -763,7 +696,6 @@ a {
     min-height: 240px;
   }
 
-  .ritual-grid,
   .experience-grid,
   .graph-grid,
   .event-list {
