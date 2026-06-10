@@ -479,6 +479,10 @@ a {
   border-radius: 8px;
 }
 
+.event-list article:last-child:nth-child(3n + 1) {
+  grid-column: 2;
+}
+
 .event-art {
   position: relative;
   overflow: hidden;
@@ -536,6 +540,7 @@ a {
 
 .strike-art span,
 .block-art span,
+.tic-art span,
 .lob-art span,
 .sitter-art span,
 .weird-art span,
@@ -573,6 +578,43 @@ a {
   border-radius: 10px;
   background: var(--ink);
   transform: rotate(-8deg);
+}
+
+.tic-art {
+  background:
+    linear-gradient(90deg, transparent 32%, rgba(26, 22, 18, .18) 33% 34%, transparent 35% 65%, rgba(26, 22, 18, .18) 66% 67%, transparent 68%),
+    linear-gradient(0deg, transparent 32%, rgba(26, 22, 18, .18) 33% 34%, transparent 35% 65%, rgba(26, 22, 18, .18) 66% 67%, transparent 68%),
+    linear-gradient(120deg, rgba(91, 143, 212, .14), transparent 46%),
+    linear-gradient(300deg, rgba(200, 161, 90, .16), transparent 54%),
+    rgba(255, 255, 255, .64);
+}
+
+.tic-art span {
+  left: calc(50% - 11px);
+  top: calc(50% - 11px);
+  background:
+    radial-gradient(circle at 38% 36%, rgba(255,255,255,.92) 0 2px, transparent 3px),
+    var(--red);
+}
+
+.tic-art i,
+.tic-art em {
+  position: absolute;
+  top: 52%;
+  width: 42px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--sage);
+}
+
+.tic-art i {
+  left: 18px;
+  transform: rotate(18deg);
+}
+
+.tic-art em {
+  right: 18px;
+  transform: rotate(-18deg);
 }
 
 .patience-art {
@@ -890,6 +932,10 @@ a {
   .graph-grid,
   .event-list {
     grid-template-columns: 1fr;
+  }
+
+  .event-list article:last-child:nth-child(3n + 1) {
+    grid-column: auto;
   }
 
   .site-footer {
