@@ -350,6 +350,165 @@
       line-height: 1.45;
     }
 
+    .job-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 38px;
+    }
+
+    .job-strip article {
+      min-height: 250px;
+      padding: 22px;
+      border: 1px solid rgba(247, 245, 241, .16);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .08);
+    }
+
+    .job-strip span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .job-strip b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.55rem, 2.6vw, 2.7rem);
+      line-height: .92;
+    }
+
+    .job-strip p {
+      margin: 14px 0 0;
+      color: rgba(247, 245, 241, .68);
+      font-weight: 750;
+      line-height: 1.42;
+    }
+
+    .learning-board {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) 72px minmax(280px, 1fr);
+      gap: 18px;
+      align-items: center;
+      margin-top: 38px;
+    }
+
+    .learning-card {
+      min-height: 390px;
+      padding: clamp(22px, 3vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .82);
+      box-shadow: var(--shadow);
+    }
+
+    .learning-card h3 {
+      max-width: 520px;
+      font-size: clamp(2.2rem, 4vw, 4.8rem);
+    }
+
+    .learning-card p {
+      margin: 24px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-size: 1.02rem;
+      font-weight: 750;
+      line-height: 1.48;
+    }
+
+    .muted-card {
+      border-top: 8px solid var(--red);
+    }
+
+    .strong-card {
+      border-top: 8px solid var(--sage);
+    }
+
+    .loop-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .loop-flow span {
+      display: grid;
+      place-items: center;
+      min-height: 46px;
+      padding: 8px;
+      border: 1px solid rgba(29, 36, 51, .12);
+      background: var(--cream);
+      color: rgba(29, 36, 51, .72);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .versus-badge {
+      display: grid;
+      place-items: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .learning-note {
+      margin-top: 22px;
+      padding: 18px 22px;
+      border: 1px solid rgba(200, 161, 90, .34);
+      border-left: 6px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      background: rgba(237, 231, 222, .82);
+      color: var(--ink);
+      font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .quality-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 38px;
+    }
+
+    .quality-pair article {
+      min-height: 340px;
+      padding: clamp(24px, 3vw, 36px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(200, 161, 90, .14), transparent 62%),
+        rgba(247, 245, 241, .86);
+      box-shadow: var(--shadow);
+    }
+
+    .quality-pair b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(2.3rem, 4.6vw, 5.2rem);
+      line-height: .88;
+    }
+
+    .quality-pair p {
+      margin: 24px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-size: clamp(1rem, 1.5vw, 1.24rem);
+      font-weight: 750;
+      line-height: 1.48;
+    }
+
     .closing {
       display: grid;
       align-items: center;
@@ -370,8 +529,15 @@
       .two-col,
       .card-grid,
       .formula,
-      .operator-list {
+      .operator-list,
+      .job-strip,
+      .learning-board,
+      .quality-pair {
         grid-template-columns: 1fr;
+      }
+
+      .versus-badge {
+        margin: 0 auto;
       }
     }
   </style>
@@ -386,6 +552,7 @@
       <a href="#thesis">Thesis</a>
       <a href="#market">Market</a>
       <a href="#experience">Experience</a>
+      <a href="#operations">Operations</a>
       <a href="#product">Product</a>
       <a href="#measurement">Measurement</a>
     </nav>
@@ -407,7 +574,7 @@
         <div>
           <p class="eyebrow">Value logic</p>
           <h2>Connection turns play into loyalty, referrals, and pricing power.</h2>
-          <p class="lede">Silliness is not the end goal. Silliness is the social lubricant that lets lower-level players relax, connect, and decide that this club is where they belong.</p>
+      <p class="lede">Silly Pickleball is not a landing page idea. It is an internal operating strategy for creating five-star community events that lower-level players remember, trust, pay for, and refer into.</p>
         </div>
         <div class="value-chain">
           <article class="chain-step">
@@ -542,6 +709,84 @@
           <p>Every good event ends with a prompt: who should be invited next, and by whom?</p>
         </article>
       </div>
+    </section>
+
+    <section class="slide dark" id="operations">
+      <p class="eyebrow">Operating model</p>
+      <h2>The people running the room create the pulse and know the pulse.</h2>
+      <p class="lede">The strategy cannot depend on one central planner guessing the vibe from a calendar. The event leader has to invite warmly, connect players, sell the next moment, sense the room, and teach with fun.</p>
+      <div class="job-strip">
+        <article>
+          <span>01</span>
+          <b>Warm invite</b>
+          <p>Make the player feel personally wanted before they arrive.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <b>Connect players</b>
+          <p>Introduce the right people and create low-pressure social bridges.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <b>Sell future events</b>
+          <p>Turn a good moment into the next class, social, or friend invite.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <b>Sense the room</b>
+          <p>Notice who is anxious, energized, lonely, ready, or misplaced.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <b>Teach with fun</b>
+          <p>Make instruction feel generous, social, and safe to fail inside.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Event-led learning</p>
+      <h2>Signups show demand. Connection quality shows product truth.</h2>
+      <div class="learning-board">
+        <article class="learning-card muted-card">
+          <h3>Single-center bottleneck</h3>
+          <div class="loop-flow">
+            <span>decision</span>
+            <span>calendar</span>
+            <span>signups</span>
+            <span>repeat</span>
+          </div>
+          <p>One center carries too many invitation and programming decisions. Fill rate becomes the proxy for quality, and feedback slows down.</p>
+        </article>
+        <div class="versus-badge">VS</div>
+        <article class="learning-card strong-card">
+          <h3>Event-led learning</h3>
+          <div class="loop-flow">
+            <span>test</span>
+            <span>feel</span>
+            <span>feedback</span>
+            <span>productize</span>
+          </div>
+          <p>Pros and community builders run small tests, sense the room, capture feedback, and productize the formats that create real connection.</p>
+        </article>
+      </div>
+      <div class="learning-note">Push high-quality event responsibility down to the pros and community builders closest to the room.</div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Quality bar</p>
+      <h2>Simple repeatable events matter. They are not enough.</h2>
+      <div class="quality-pair">
+        <article>
+          <b>Reliability creates trust.</b>
+          <p>Clean operations, clear scheduling, predictable formats, enough options, and fewer surprises make players feel safe showing up.</p>
+        </article>
+        <article>
+          <b>Quality creates memory.</b>
+          <p>Pro-led flavor, silly moments, warm introductions, music, humor, and community energy make players feel something worth returning to.</p>
+        </article>
+      </div>
+      <div class="learning-note">Stage two keeps reliability and adds event-led discovery.</div>
     </section>
 
     <section class="slide">
