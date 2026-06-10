@@ -942,6 +942,103 @@
       line-height: 1.42;
     }
 
+    .diagnosis-board {
+      display: grid;
+      grid-template-columns: minmax(300px, .92fr) minmax(360px, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
+      margin-top: 38px;
+    }
+
+    .diagnosis-question {
+      padding: clamp(26px, 3vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(200, 161, 90, .18), transparent 52%),
+        rgba(247, 245, 241, .9);
+      box-shadow: var(--shadow);
+    }
+
+    .diagnosis-question b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.6vw, 4.3rem);
+      line-height: .92;
+    }
+
+    .diagnosis-question p {
+      margin: 22px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-size: clamp(1rem, 1.45vw, 1.2rem);
+      font-weight: 750;
+      line-height: 1.48;
+    }
+
+    .diagnosis-loop {
+      display: grid;
+      gap: 12px;
+    }
+
+    .diagnosis-loop article {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(237, 231, 222, .76);
+    }
+
+    .diagnosis-loop span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .diagnosis-loop b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.42rem, 2.2vw, 2.25rem);
+      line-height: .95;
+    }
+
+    .diagnosis-loop p {
+      margin: 8px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-weight: 750;
+      line-height: 1.42;
+    }
+
+    .sales-process {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .sales-process span {
+      display: grid;
+      place-items: center;
+      min-height: 58px;
+      padding: 10px;
+      border: 1px solid rgba(29, 36, 51, .14);
+      background: var(--cream);
+      color: rgba(29, 36, 51, .72);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
     .learning-board {
       display: grid;
       grid-template-columns: minmax(280px, 1fr) 72px minmax(280px, 1fr);
@@ -1085,6 +1182,8 @@
       .academy-system,
       .dimension-grid,
       .video-grid,
+      .diagnosis-board,
+      .sales-process,
       .operator-list,
       .job-strip,
       .learning-board,
@@ -1124,6 +1223,7 @@
       <a href="#experience">Experience</a>
       <a href="#academy">Academy</a>
       <a href="#operations">Operations</a>
+      <a href="#sales">Sales</a>
       <a href="#product">Product</a>
       <a href="#measurement">Measurement</a>
     </nav>
@@ -1473,6 +1573,48 @@
           <p>Make instruction feel generous, social, and safe to fail inside.</p>
         </article>
       </div>
+    </section>
+
+    <section class="slide" id="sales">
+      <p class="eyebrow">Fill diagnosis and sales process</p>
+      <h2>Every event should teach us why people signed up or stayed away.</h2>
+      <div class="diagnosis-board">
+        <article class="diagnosis-question">
+          <b>Staff question after every event: why did this fill?</b>
+          <p>If it filled, do not just celebrate the number. Identify the source of demand: personal invite, trusted host, right level, right vibe, right promise, right timing, friend referral, or a format players already understand.</p>
+        </article>
+        <div class="diagnosis-loop">
+          <article>
+            <span>01</span>
+            <div>
+              <b>If it filled, what worked?</b>
+              <p>Name the actual reason. Who invited? What promise landed? Which players pulled others in?</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <b>If it did not fill, what was missing?</b>
+              <p>Was the audience unclear, the trust too low, the level wrong, the benefit vague, or the invitation too cold?</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <b>What is the next sales move?</b>
+              <p>Warm call, personal text, referral ask, bridge player, better title, better format, or a smaller first test.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="sales-process" aria-label="Event sales process">
+        <span>Clear promise</span>
+        <span>Right invite list</span>
+        <span>Confidence to show up</span>
+        <span>Personal follow-up</span>
+        <span>Referral loop</span>
+      </div>
+      <div class="learning-note">The sales process is not posting an event and hoping. It is understanding who the event is for, why they would trust it, who should invite them, and what next invitation the event creates.</div>
     </section>
 
     <section class="slide">
