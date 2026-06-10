@@ -229,6 +229,235 @@
       line-height: 1.45;
     }
 
+    .why-strategy {
+      background:
+        radial-gradient(circle at 78% 18%, rgba(91, 143, 212, .12), transparent 34%),
+        linear-gradient(135deg, var(--paper2), var(--paper));
+    }
+
+    .why-loop {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .why-loop article {
+      min-height: 300px;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(184, 149, 74, .13), transparent 58%),
+        rgba(247, 245, 241, .9);
+    }
+
+    .why-loop span {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 76px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .78rem;
+      font-weight: 900;
+    }
+
+    .why-loop b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3vw, 3.8rem);
+      line-height: .9;
+    }
+
+    .why-loop p {
+      max-width: 250px;
+      margin: 12px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-size: .98rem;
+      line-height: 1.36;
+      font-weight: 800;
+    }
+
+    .why-proof {
+      display: grid;
+      grid-template-columns: minmax(280px, .68fr) minmax(320px, 1fr);
+      gap: 26px;
+      align-items: center;
+      margin-top: 26px;
+      padding: 24px;
+      border: 1px solid rgba(91, 143, 212, .24);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .58);
+    }
+
+    .proof-visual {
+      position: relative;
+      min-height: 176px;
+      border: 1px solid rgba(29, 36, 51, .12);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(184, 149, 74, .2), transparent 23%),
+        rgba(237, 231, 222, .74);
+      overflow: hidden;
+    }
+
+    .proof-visual::before,
+    .proof-visual::after {
+      content: "";
+      position: absolute;
+      inset: 36px 42px;
+      border: 3px solid rgba(91, 143, 212, .36);
+      border-radius: 50%;
+      transform: rotate(-11deg);
+    }
+
+    .proof-visual::after {
+      border-color: rgba(200, 70, 44, .32);
+      transform: rotate(13deg);
+    }
+
+    .proof-visual i {
+      position: absolute;
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 10px 24px rgba(29, 36, 51, .16);
+    }
+
+    .proof-visual i:nth-child(1) { left: 18%; top: 46%; background: var(--red); }
+    .proof-visual i:nth-child(2) { left: 34%; top: 28%; }
+    .proof-visual i:nth-child(3) { left: 48%; top: 58%; background: var(--blue); }
+    .proof-visual i:nth-child(4) { left: 64%; top: 34%; }
+    .proof-visual i:nth-child(5) { left: 78%; top: 52%; background: var(--sage); }
+    .proof-visual i:nth-child(6) { left: 48%; top: 42%; width: 36px; height: 36px; background: var(--ink); }
+
+    .why-proof b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 3.2vw, 4.2rem);
+      line-height: .9;
+    }
+
+    .why-proof p {
+      margin: 12px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-weight: 780;
+      line-height: 1.45;
+    }
+
+    .event-lab {
+      background:
+        linear-gradient(120deg, rgba(200, 70, 44, .06), transparent 45%),
+        var(--paper);
+    }
+
+    .lab-layout {
+      display: grid;
+      grid-template-columns: minmax(320px, .92fr) minmax(320px, 1fr);
+      gap: clamp(30px, 5vw, 74px);
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .lab-visual {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid rgba(29, 36, 51, .13);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(184, 149, 74, .24), transparent 20%),
+        radial-gradient(circle at 22% 20%, rgba(91, 143, 212, .14), transparent 25%),
+        radial-gradient(circle at 78% 80%, rgba(200, 70, 44, .12), transparent 25%),
+        rgba(247, 245, 241, .88);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .lab-visual::before,
+    .lab-visual::after {
+      content: "";
+      position: absolute;
+      inset: 72px;
+      border: 2px dashed rgba(184, 149, 74, .54);
+      border-radius: 50%;
+    }
+
+    .lab-visual::after {
+      inset: 118px 82px;
+      border-color: rgba(91, 143, 212, .38);
+      transform: rotate(-18deg);
+    }
+
+    .lab-visual span {
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      min-width: 102px;
+      min-height: 102px;
+      padding: 14px;
+      border-radius: 999px;
+      background: var(--paper2);
+      border: 2px solid rgba(29, 36, 51, .14);
+      box-shadow: 0 16px 36px rgba(29, 36, 51, .13);
+      color: var(--ink);
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .lab-visual .host-dot {
+      left: 50%;
+      top: 50%;
+      min-width: 138px;
+      min-height: 138px;
+      transform: translate(-50%, -50%);
+      background: var(--ink);
+      color: var(--paper);
+      border-color: rgba(247, 245, 241, .7);
+    }
+
+    .lab-visual span:nth-child(2) { left: 13%; top: 14%; border-color: rgba(91, 143, 212, .45); }
+    .lab-visual span:nth-child(3) { right: 10%; top: 18%; border-color: rgba(184, 149, 74, .55); }
+    .lab-visual span:nth-child(4) { left: 8%; bottom: 18%; border-color: rgba(200, 70, 44, .45); }
+    .lab-visual span:nth-child(5) { right: 12%; bottom: 16%; border-color: rgba(102, 120, 106, .45); }
+    .lab-visual span:nth-child(6) { left: 50%; bottom: 7%; transform: translateX(-50%); border-color: rgba(91, 143, 212, .45); }
+
+    .lab-cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .lab-cards article {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 241, .8);
+      box-shadow: 0 14px 36px rgba(29, 36, 51, .08);
+    }
+
+    .lab-cards b {
+      display: block;
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 2.7vw, 3.35rem);
+      line-height: .92;
+    }
+
+    .lab-cards p {
+      margin: 12px 0 0;
+      color: rgba(29, 36, 51, .66);
+      font-weight: 760;
+      line-height: 1.42;
+    }
+
     .dark {
       background: var(--ink);
       color: var(--paper);
@@ -1252,6 +1481,9 @@
       .hero { background-size: 95vw auto; background-position: center bottom; align-items: start; }
       .hero-inner { padding-bottom: 52vw; }
       .two-col,
+      .why-loop,
+      .why-proof,
+      .lab-layout,
       .card-grid,
       .formula,
       .density-flow,
@@ -1287,6 +1519,18 @@
       .journey-grid span {
         margin-bottom: 20px;
       }
+
+      .why-loop article {
+        min-height: 220px;
+      }
+
+      .why-loop span {
+        margin-bottom: 34px;
+      }
+
+      .lab-visual {
+        min-height: 420px;
+      }
     }
   </style>
 </head>
@@ -1298,6 +1542,7 @@
     </a>
     <nav class="strategy-nav" aria-label="Strategy sections">
       <a href="#thesis">Thesis</a>
+      <a href="#why">Why</a>
       <a href="#market">Market</a>
       <a href="#staff-goals">Staff goals</a>
       <a href="#experience">Experience</a>
@@ -1356,6 +1601,73 @@
               <b>Players refer friends.</b>
               <p>Five-star connection creates warm word of mouth, higher loyalty, and more willingness to pay.</p>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide why-strategy" id="why">
+      <p class="eyebrow">Why this strategy</p>
+      <h2>Do Give n Receive first. Build after.</h2>
+      <div class="why-loop" aria-label="Do it, feel it, automate it, copy it">
+        <article>
+          <span>01</span>
+          <b>Run the event.</b>
+          <p>Real people, real room, real feeling.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <b>Create the feeling.</b>
+          <p>Laughter, trust, confidence, return energy.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <b>Read the signal.</b>
+          <p>Who gives, connects, returns, requests, invites.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <b>Automate the repeat.</b>
+          <p>Invites, follow-ups, templates, host prompts.</p>
+        </article>
+      </div>
+      <div class="why-proof">
+        <div class="proof-visual" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div>
+          <b>The event is the prototype.</b>
+          <p>NEPC has to become the thriving Give n Receive community first. Then GnR packages what worked and other clubs buy the product, playbook, culture, messaging, and proof.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide event-lab">
+      <div>
+        <p class="eyebrow">NEPC event lab</p>
+        <h2>Social pull starts with people closest to the room.</h2>
+      </div>
+      <div class="lab-layout">
+        <div class="lab-visual" aria-hidden="true">
+          <span class="host-dot">Host</span>
+          <span>Pros</span>
+          <span>Members</span>
+          <span>New faces</span>
+          <span>Givers</span>
+          <span>Future partners</span>
+        </div>
+        <div class="lab-cards">
+          <article>
+            <b>Pros create the first repeatable events.</b>
+            <p>They already have trust, teaching authority, and the ability to make a group feel open, connected, and alive.</p>
+          </article>
+          <article>
+            <b>Community builders create demand.</b>
+            <p>Reward referrers, givers, bridge players, and anyone who makes other people want to show up.</p>
+          </article>
+          <article>
+            <b>The product learns from what repeats.</b>
+            <p>Host moves, group mix, invitation promise, follow-up, and member-builder recognition become the software.</p>
           </article>
         </div>
       </div>
