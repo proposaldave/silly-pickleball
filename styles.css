@@ -542,6 +542,7 @@ a {
 .block-art span,
 .tic-art span,
 .reset-art span,
+.out-art span,
 .lob-art span,
 .sitter-art span,
 .weird-art span,
@@ -579,6 +580,45 @@ a {
   border-radius: 10px;
   background: var(--ink);
   transform: rotate(-8deg);
+}
+
+.out-art i {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 42px;
+  height: 34px;
+  border-radius: 8px 8px 4px 4px;
+  background: var(--ink);
+}
+
+.out-art em {
+  position: absolute;
+  right: 24px;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--red);
+  box-shadow: -42px 0 0 rgba(200, 161, 90, .32);
+}
+
+.out-art span:nth-of-type(1) {
+  left: 78px;
+  top: 28px;
+}
+
+.out-art span:nth-of-type(2) {
+  left: 118px;
+  top: 44px;
+}
+
+.out-art span:nth-of-type(3) {
+  right: 14px;
+  top: 42px;
+  background:
+    radial-gradient(circle at 38% 36%, rgba(255,255,255,.92) 0 2px, transparent 3px),
+    var(--red);
 }
 
 .reset-art span {
