@@ -921,126 +921,6 @@
       line-height: .9;
     }
 
-    .request-slide {
-      background:
-        radial-gradient(circle at 82% 18%, rgba(91, 143, 212, .12), transparent 30%),
-        linear-gradient(135deg, rgba(247, 245, 241, .96), rgba(237, 231, 222, .92));
-    }
-
-    .request-layout {
-      display: grid;
-      grid-template-columns: minmax(320px, .9fr) minmax(380px, 1.1fr);
-      gap: clamp(30px, 5vw, 72px);
-      align-items: center;
-      margin-top: 36px;
-    }
-
-    .request-visual {
-      position: relative;
-      min-height: 520px;
-      border: 1px solid rgba(29, 36, 51, .13);
-      border-radius: 8px;
-      background:
-        linear-gradient(90deg, transparent 49.5%, rgba(184, 149, 74, .28) 49.5%, rgba(184, 149, 74, .28) 50.5%, transparent 50.5%),
-        radial-gradient(circle at 50% 18%, rgba(91, 143, 212, .16), transparent 22%),
-        rgba(247, 245, 241, .82);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .request-visual::before,
-    .request-visual::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 62%;
-      height: 62%;
-      border: 2px dashed rgba(184, 149, 74, .5);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .request-visual::after {
-      width: 42%;
-      height: 42%;
-      border-color: rgba(91, 143, 212, .44);
-      transform: translate(-50%, -50%) rotate(18deg);
-    }
-
-    .request-node {
-      position: absolute;
-      z-index: 2;
-      display: grid;
-      place-items: center;
-      width: 138px;
-      height: 138px;
-      padding: 16px;
-      border: 2px solid rgba(29, 36, 51, .14);
-      border-radius: 999px;
-      background: var(--paper2);
-      box-shadow: 0 16px 36px rgba(29, 36, 51, .13);
-      color: var(--ink);
-      font-size: .76rem;
-      font-weight: 900;
-      letter-spacing: .08em;
-      line-height: 1.18;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .request-node.player { left: 50%; top: 32px; transform: translateX(-50%); border-color: rgba(91, 143, 212, .5); }
-    .request-node.desk { left: 50%; top: 50%; width: 166px; height: 166px; transform: translate(-50%, -50%); background: var(--ink); color: var(--paper); border-color: rgba(247, 245, 241, .72); }
-    .request-node.schedule { left: 24px; bottom: 50px; border-color: rgba(184, 149, 74, .58); }
-    .request-node.invite { right: 24px; bottom: 50px; border-color: rgba(200, 70, 44, .48); }
-
-    .request-cards {
-      display: grid;
-      gap: 14px;
-    }
-
-    .request-cards article {
-      display: grid;
-      grid-template-columns: 50px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(247, 245, 241, .86);
-      box-shadow: 0 14px 34px rgba(29, 36, 51, .07);
-    }
-
-    .request-cards span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      background: var(--blue);
-      color: var(--paper);
-      font-weight: 900;
-    }
-
-    .request-cards article:nth-child(2) span { background: var(--gold); }
-    .request-cards article:nth-child(3) span { background: var(--red); }
-    .request-cards article:nth-child(4) span { background: var(--sage); }
-
-    .request-cards b {
-      display: block;
-      font-family: var(--display);
-      font-size: clamp(1.55rem, 2.4vw, 2.7rem);
-      line-height: .94;
-    }
-
-    .request-cards p {
-      margin: 8px 0 0;
-      color: rgba(29, 36, 51, .66);
-      font-weight: 760;
-      line-height: 1.4;
-    }
-
     .staff-board {
       display: grid;
       grid-template-columns: minmax(280px, .7fr) minmax(360px, 1fr);
@@ -1608,7 +1488,6 @@
       .formula,
       .density-flow,
       .pulse-board,
-      .request-layout,
       .staff-board,
       .academy-system,
       .dimension-grid,
@@ -1653,19 +1532,6 @@
         min-height: 420px;
       }
 
-      .request-visual {
-        min-height: 420px;
-      }
-
-      .request-node {
-        width: 118px;
-        height: 118px;
-      }
-
-      .request-node.desk {
-        width: 146px;
-        height: 146px;
-      }
     }
   </style>
 </head>
@@ -1679,7 +1545,6 @@
       <a href="#thesis">Thesis</a>
       <a href="#why">Why</a>
       <a href="#market">Market</a>
-      <a href="#requests">Requests</a>
       <a href="#staff-goals">Staff goals</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -1759,7 +1624,7 @@
         <article>
           <span>03</span>
           <b>Read the signal.</b>
-          <p>Who gives, connects, returns, requests, invites.</p>
+          <p>Who gives, connects, returns, invites.</p>
         </article>
         <article>
           <span>04</span>
@@ -1891,49 +1756,6 @@
       </div>
     </section>
 
-    <section class="slide request-slide" id="requests">
-      <p class="eyebrow">Demand intake</p>
-      <h2>Make every player request easy to submit, easy to schedule, and impossible to lose.</h2>
-      <div class="request-layout">
-        <div class="request-visual" aria-label="Player requests become scheduled events">
-          <span class="request-node player">Player asks</span>
-          <span class="request-node desk">Front desk captures</span>
-          <span class="request-node schedule">Schedule path</span>
-          <span class="request-node invite">Warm invite</span>
-        </div>
-        <div class="request-cards">
-          <article>
-            <span>01</span>
-            <div>
-              <b>Requests are demand signals.</b>
-              <p>Lessons, clinics, socials, partner needs, level worries, time windows, and “I want to play with Dave” all become usable signal.</p>
-            </div>
-          </article>
-          <article>
-            <span>02</span>
-            <div>
-              <b>Front desk owns the capture.</b>
-              <p>Staff should make it normal to ask: what are you looking for, who do you want help from, and what would make you come back?</p>
-            </div>
-          </article>
-          <article>
-            <span>03</span>
-            <div>
-              <b>Scheduling follows the list.</b>
-              <p>If Dave has players asking for lessons with him, that list should become lesson blocks, small groups, or a member-only play invite.</p>
-            </div>
-          </article>
-          <article>
-            <span>04</span>
-            <div>
-              <b>The follow-up is the sale.</b>
-              <p>Once the right format exists, invite the exact people who asked for it first, then let them bring the next warm friend.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="slide" id="staff-goals">
       <p class="eyebrow">Staff goals and objectives</p>
       <h2>Silly Pickleball gives staff a clear job: create, measure, and reward human connection.</h2>
@@ -1969,7 +1791,7 @@
             <span>04</span>
             <div>
               <b>Measure human connection after events.</b>
-              <p>Front desk, staff, or GnR should capture post-event feedback: who felt welcome, who connected, who should be invited next.</p>
+              <p>Event leaders should capture post-event feedback: who felt welcome, who connected, who should be invited next.</p>
             </div>
           </article>
           <article>
