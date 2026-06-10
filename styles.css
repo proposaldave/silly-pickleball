@@ -180,6 +180,7 @@ a {
 }
 
 .variant-band,
+.five-star,
 .visual-maps,
 .rituals,
 .join,
@@ -328,6 +329,59 @@ a {
 .primary-map {
   position: sticky;
   top: 86px;
+}
+
+.five-star {
+  background:
+    linear-gradient(180deg, rgba(200, 161, 90, .16), transparent 42%),
+    var(--cream);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.experience-grid article {
+  position: relative;
+  min-height: 176px;
+  padding: 28px 24px 24px;
+  border: 1px solid rgba(200, 161, 90, .28);
+  border-radius: 8px;
+  background: rgba(247, 245, 241, .82);
+  box-shadow: 0 18px 42px rgba(26, 22, 18, .08);
+}
+
+.experience-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--paper);
+  font-size: .88rem;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(26, 22, 18, .14);
+}
+
+.experience-grid b {
+  display: block;
+  max-width: 420px;
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+  line-height: .94;
+}
+
+.experience-grid p {
+  margin: 12px 0 0;
+  color: rgba(26, 22, 18, .64);
+  font-size: .98rem;
+  line-height: 1.45;
+  font-weight: 750;
 }
 
 .rituals {
@@ -602,6 +656,10 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .primary-map {
     position: static;
   }
@@ -643,6 +701,7 @@ a {
   }
 
   .ritual-grid,
+  .experience-grid,
   .graph-grid,
   .event-list {
     grid-template-columns: 1fr;
