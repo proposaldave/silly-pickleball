@@ -180,6 +180,7 @@ a {
 }
 
 .variant-band,
+.visual-maps,
 .rituals,
 .join,
 .product-strip,
@@ -217,6 +218,15 @@ a {
   color: rgba(26, 22, 18, .68);
   font-size: clamp(1rem, 1.5vw, 1.22rem);
   line-height: 1.5;
+  font-weight: 750;
+}
+
+.section-kicker {
+  max-width: 430px;
+  margin: 0;
+  color: rgba(26, 22, 18, .64);
+  font-size: 1rem;
+  line-height: 1.45;
   font-weight: 750;
 }
 
@@ -276,6 +286,48 @@ a {
   background: rgba(251, 247, 239, .68);
   border-radius: 0 8px 8px 0;
   font-weight: 750;
+}
+
+.visual-maps {
+  background:
+    linear-gradient(180deg, transparent, rgba(200, 161, 90, .10)),
+    var(--paper);
+}
+
+.map-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(280px, .84fr);
+  gap: clamp(16px, 3vw, 30px);
+  align-items: start;
+}
+
+.map-card {
+  margin: 0;
+  padding: clamp(10px, 1.5vw, 16px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(237, 231, 222, .72);
+  box-shadow: var(--shadow);
+}
+
+.map-card img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(26, 22, 18, .12);
+}
+
+.map-card figcaption {
+  margin-top: 12px;
+  color: rgba(26, 22, 18, .58);
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.primary-map {
+  position: sticky;
+  top: 86px;
 }
 
 .rituals {
@@ -532,6 +584,7 @@ a {
   .section-head,
   .product-strip,
   .join,
+  .map-gallery,
   .referral-callout,
   .concept-card {
     grid-template-columns: 1fr;
@@ -547,6 +600,10 @@ a {
 
   .graph-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .primary-map {
+    position: static;
   }
 }
 
