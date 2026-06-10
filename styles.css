@@ -465,12 +465,13 @@ a {
 
 .event-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
 }
 
 .event-list article {
   display: grid;
+  grid-column: span 2;
   gap: 12px;
   min-height: 350px;
   padding: 22px;
@@ -480,7 +481,11 @@ a {
 }
 
 .event-list article:last-child:nth-child(3n + 1) {
-  grid-column: 2;
+  grid-column: 3 / span 2;
+}
+
+.event-list article:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 2 / span 2;
 }
 
 .event-art {
@@ -539,6 +544,7 @@ a {
 }
 
 .strike-art span,
+.belgian-art span,
 .block-art span,
 .tic-art span,
 .reset-art span,
@@ -569,6 +575,40 @@ a {
   border-radius: 999px;
   background: var(--sage);
   transform: rotate(-24deg);
+}
+
+.belgian-art span {
+  left: 26%;
+  top: 36px;
+  background:
+    radial-gradient(circle at 38% 36%, rgba(255,255,255,.92) 0 2px, transparent 3px),
+    var(--red);
+}
+
+.belgian-art i {
+  position: absolute;
+  right: 34px;
+  bottom: 24px;
+  width: 58px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  transform: rotate(-38deg);
+}
+
+.belgian-art em {
+  position: absolute;
+  left: 28px;
+  right: 34px;
+  top: 22px;
+  height: 56px;
+  border-top: 4px dashed var(--gold);
+  border-radius: 60% 60% 0 0;
+  transform: rotate(-15deg);
+}
+
+.belgian-art::before {
+  border-color: rgba(200, 70, 44, .24);
 }
 
 .block-art span { right: 26px; top: 34px; }
@@ -1047,7 +1087,9 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .event-list article:last-child:nth-child(3n + 1) {
+  .event-list article,
+  .event-list article:last-child:nth-child(3n + 1),
+  .event-list article:nth-last-child(2):nth-child(3n + 1) {
     grid-column: auto;
   }
 
