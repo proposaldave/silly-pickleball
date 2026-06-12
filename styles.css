@@ -314,6 +314,7 @@ a {
   width: 100%;
   border-radius: 6px;
   border: 1px solid rgba(26, 22, 18, .12);
+  filter: saturate(1.06) contrast(1.04);
 }
 
 .map-card figcaption {
