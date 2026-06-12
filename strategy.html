@@ -235,6 +235,27 @@
         linear-gradient(135deg, var(--paper2), var(--paper));
     }
 
+    .feeling-slide {
+      background:
+        radial-gradient(circle at 72% 28%, rgba(91, 143, 212, .12), transparent 28%),
+        radial-gradient(circle at 24% 76%, rgba(200, 70, 44, .08), transparent 30%),
+        var(--paper);
+    }
+
+    .feeling-standard {
+      margin-top: 30px;
+      padding: clamp(22px, 3vw, 34px);
+      border: 1px solid rgba(184, 149, 74, .34);
+      border-left: 7px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      background: rgba(247, 245, 241, .82);
+      box-shadow: 0 18px 46px rgba(29, 36, 51, .08);
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 3.1vw, 3.75rem);
+      line-height: .98;
+    }
+
     .why-loop {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1664,6 +1685,7 @@
     </a>
     <nav class="strategy-nav" aria-label="Strategy sections">
       <a href="#thesis">Thesis</a>
+      <a href="#feeling">Feeling</a>
       <a href="#why">Why</a>
       <a href="#market">Market</a>
       <a href="#staff-goals">Staff goals</a>
@@ -1685,6 +1707,47 @@
         <h1>The event is only valuable if people connect.</h1>
         <div class="thesis-card">
           If players feel real human connection, it was a good event. If they do not, it was not valuable. <strong>The more connection people feel, the more valuable the experience becomes.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide feeling-slide" id="feeling">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Social club standard</p>
+          <h2>The real goal is the feeling everyone gets.</h2>
+          <p class="lede">In a social pickleball club, the win is not just better shots, more signups, or cleaner scheduling. The win is that I feel good, you feel good, and we feel good together.</p>
+          <div class="feeling-standard">Every suggestion, program, match, invite, and follow-up should be judged by whether it creates more of that feeling.</div>
+        </div>
+        <div class="value-chain">
+          <article class="chain-step">
+            <span>01</span>
+            <div>
+              <b>I feel good.</b>
+              <p>The player feels safe, seen, less judged, and more comfortable showing up again.</p>
+            </div>
+          </article>
+          <article class="chain-step">
+            <span>02</span>
+            <div>
+              <b>You feel good.</b>
+              <p>Partners, opponents, pros, and hosts feel that the player adds to the room.</p>
+            </div>
+          </article>
+          <article class="chain-step">
+            <span>03</span>
+            <div>
+              <b>We feel good together.</b>
+              <p>The group has a shared moment: laughter, generosity, encouragement, a good rally, a warm invite.</p>
+            </div>
+          </article>
+          <article class="chain-step">
+            <span>04</span>
+            <div>
+              <b>The community compounds.</b>
+              <p>Programming and matchmaking should create more people who want to return and bring the next friend.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
