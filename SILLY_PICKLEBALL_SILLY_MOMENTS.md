@@ -178,13 +178,24 @@ When players feel safe laughing at the weirdness, they relax. When they relax, t
 ## Community Etiquette Is Silly But Real
 
 1. Proper and generous line calls matter because stingy calls are a buzz kill.
-2. If you call a ball out that was in, your friends will see it.
-3. Generous line calls help the vibe.
-4. The game constantly asks players to choose between being technically right and being fun to play with.
-5. Apology, forgiveness, and generosity happen on repeat.
-6. Players learn that social value can matter as much as winning the rally.
-7. The best players to play with are not always the highest-rated players.
-8. The most valuable player in a group may be the one who makes everyone feel included.
+2. A bad line call in social play is a MAJOR BUZZ KILL every time.
+3. If you call a ball out that was in, your friends will see it.
+4. A generous line call automatically boosts the positive vibes on the court, every time.
+5. Generous line calls help the vibe.
+6. If you are not sure, the social-play move is to give the benefit of the doubt.
+7. The goal is not to win the line-call argument. The goal is to keep the court feeling good.
+8. Community Etiquette Class should teach line calls as court energy, not just rules.
+9. Apology theater matters: net cords, body balls, mishits, and accidental winners need a quick apology, a smile, and then the point moves on.
+10. Paddle taps can reset awkward moments: sorry, nice try, good rally, still friends, keep going.
+11. Score patience is etiquette: if someone is confused, help them instead of making them feel exposed.
+12. Mixed-level generosity matters: avoid hunting weaker players in a way that makes the court feel small or mean.
+13. Partner protection is etiquette: call mine, yours, switch, help, and middle early enough that your partner feels supported.
+14. Win without draining the room: players should know the difference between competing well and becoming someone others do not want to invite back.
+15. The game constantly asks players to choose between being technically right and being fun to play with.
+16. Apology, forgiveness, and generosity happen on repeat.
+17. Players learn that social value can matter as much as winning the rally.
+18. The best players to play with are not always the highest-rated players.
+19. The most valuable player in a group may be the one who makes everyone feel included.
 
 ## Social Coordination Is The Hidden Game
 
