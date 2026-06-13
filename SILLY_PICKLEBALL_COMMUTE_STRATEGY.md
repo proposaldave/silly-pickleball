@@ -278,8 +278,6 @@ Let It Go Out-Ball Class teaches that sometimes the best shot is doing nothing.
 
 Trick Shots Lab makes the net-cord blow shot, Erne, and around-the-post shot playful instead of intimidating.
 
-Belgian Backhand Class lets Dave teach the forehand-on-backhand-side specialty shot and when it works or fails.
-
 Cover the Middle plus Tic Tac Toe teaches communication through a game instead of a lecture.
 
 Patience turns long dinking rallies into social rhythm and emotional restraint.
@@ -532,7 +530,7 @@ Start with Baby Block, because it already has the Loom video and the safety-eyew
 
 Then build Community Etiquette, because the line-call and vibe lessons are central to the brand.
 
-Then build Mastering the Resets, Let It Go Out-Balls, Trick Shots Lab, Belgian Backhand, Score-Help Social, Patience, Pro Plays In, and Cover the Middle plus Tic Tac Toe.
+Then build Mastering the Resets, Let It Go Out-Balls, Trick Shots Lab, Score-Help Social, Patience, Pro Plays In, and Cover the Middle plus Tic Tac Toe.
 
 Second, every class needs video proof.
 

@@ -157,11 +157,8 @@ When players feel safe laughing at the weirdness, they relax. When they relax, t
 1. Ernes are silly because the player appears to leave normal court reality for a surprise attack.
 2. Around-the-post shots are silly because the ball can go around the net instead of over it and still count.
 3. Trick Shots Lab can make the Caleb blow shot, Erne, and around-the-post shot feel playful instead of intimidating.
-4. The Belgian Backhand is silly because it is really a forehand used on the backhand side.
-5. The Belgian Backhand can swat high hit balls and create Dave-style speedups.
-6. The Belgian Backhand stops working when the ball gets low enough to demand a real backhand.
-7. A trick shot can be both a teaching moment and a permission slip to play.
-8. Flashy shots are best when they make people laugh, not posture.
+4. A trick shot can be both a teaching moment and a permission slip to play.
+5. Flashy shots are best when they make people laugh, not posture.
 
 ## Baby Block, Resets, And Soft Hands
 
@@ -215,15 +212,14 @@ When players feel safe laughing at the weirdness, they relax. When they relax, t
 3. Mastering the Resets: players hit overheads while the pro defends from the transition zone.
 4. Let It Go Out-Ball Class: ball machine feeds tempting out-balls and players score by letting them go.
 5. Trick Shots Lab: net-cord tap and blow shot, Erne, and around-the-post attempts.
-6. Belgian Backhand Class: Dave teaches the forehand-on-backhand-side specialty shot and when it fails.
-7. Cover the Middle plus Tic Tac Toe: use a court game to teach communication and middle coverage.
-8. Patience: turn long dinking rallies into a social rhythm and a game of emotional restraint.
-9. Pro Plays In: pros use kitchen lobs, easy balls, playful resets, and confidence-building rallies.
-10. Community Etiquette: generous line calls, apology theater, paddle taps, and keeping the vibe good.
-11. Kitchen Sitter Lab: practice the ball everyone thinks is automatic, then laugh when it is not.
-12. Weird Works: bonus points for awkward saves, mishits, tweeners, resets, and ugly balls that stay alive.
-13. Middle Mystery: teams earn points for clear calls, coverage, and recovering from "who's got middle?" confusion.
-14. Invitation Round: after a good silly event, players invite the right friend back into the next format.
+6. Cover the Middle plus Tic Tac Toe: use a court game to teach communication and middle coverage.
+7. Patience: turn long dinking rallies into a social rhythm and a game of emotional restraint.
+8. Pro Plays In: pros use kitchen lobs, easy balls, playful resets, and confidence-building rallies.
+9. Community Etiquette: generous line calls, apology theater, paddle taps, and keeping the vibe good.
+10. Kitchen Sitter Lab: practice the ball everyone thinks is automatic, then laugh when it is not.
+11. Weird Works: bonus points for awkward saves, mishits, tweeners, resets, and ugly balls that stay alive.
+12. Middle Mystery: teams earn points for clear calls, coverage, and recovering from "who's got middle?" confusion.
+13. Invitation Round: after a good silly event, players invite the right friend back into the next format.
 
 ## One-Sentence Summary
 
