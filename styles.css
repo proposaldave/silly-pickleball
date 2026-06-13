@@ -510,13 +510,14 @@ a {
 }
 
 .product-hero-board {
-  min-height: clamp(280px, 23vw, 380px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .product-hero-board img {
-  min-height: clamp(280px, 23vw, 380px);
-  padding: 10px;
-  background: var(--paper);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .product-proof-row {
